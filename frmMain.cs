@@ -11,6 +11,7 @@
     using ff14bot.Objects;
     using ff14bot.RemoteWindows;
     using LlamaLibrary.Extensions;
+    using LlamaLibrary.RemoteWindows;
 
     public partial class frmMain : Form
     {
@@ -23,11 +24,14 @@
 
         private void UpdateData()
         {
-            if (Core.Player == null)
-                return;
+            chkCommonBehaviorsIsLoading.Checked = CommonBehaviors.IsLoading;
 
             Pulsator.Pulse(PulseFlags.All);
 
+            if (Core.Player == null)
+                return;
+
+            // Player
             txtPlayerId.Text = Core.Player.ObjectId.ToString();
             txtPlayerName.Text = Core.Player.Name;
             txtPlayerTargetId.Text = GameObjectManager.Target == null ? "NULL" : GameObjectManager.Target.ObjectId.ToString(); //Core.Player.CurrentTargetId.ToString();
@@ -41,14 +45,18 @@
 
             chkPlayerInCombat.Checked = Core.Player.InCombat;
             chkPlayerIsAlive.Checked = Core.Player.IsAlive;
+            chkPlayerIsCasting.Checked = Core.Player.IsCasting;
 
             chkDutyManagerDutyReady.Checked = DutyManager.DutyReady;
             chkDutyManagerInInstance.Checked = DutyManager.InInstance;
             chkFateManagerWithinFate.Checked = FateManager.WithinFate;
-            chkTalkDialogOpen.Checked = Talk.DialogOpen;
 
             txtPlayerMountId.Text = LocalPlayerExtensions.CurrentMount(Core.Player).ToString();
 
+            chkMovementManagerIsMoving.Checked = MovementManager.IsMoving;
+            chkMovementManagerIsOccupied.Checked = MovementManager.IsOccupied;
+
+            // Map
             txtMapId.Text = WorldManager.ZoneId.ToString();
             txtMapName.Text = WorldManager.CurrentZoneName;
             chkMapWorldManagerCanFly.Checked = WorldManager.CanFly;
@@ -56,6 +64,19 @@
 
             txtMapWeatherId.Text = WorldManager.CurrentWeatherId.ToString();
             txtMapWeather.Text = WorldManager.CurrentWeather;
+
+            // UI
+            chkConversationIsOpen.Checked = Conversation.IsOpen;
+            chkGrandCompanyExchangeIsOpen.Checked = GrandCompanyExchange.Instance.IsOpen;
+            chkGrandCompanySupplyListIsOpen.Checked = GrandCompanySupplyList.Instance.IsOpen;
+            chkSelectYesnoIsOpen.Checked = SelectYesno.IsOpen;
+            chkSelectIconStringIsOpen.Checked = SelectIconString.IsOpen;
+            chkShopExchangeItemIsOpen.Checked = ShopExchangeItem.Instance.IsOpen;
+            chkTalkDialogOpen.Checked = Talk.DialogOpen;
+
+            chkCraftingLogIsOpen.Checked = CraftingLog.IsOpen;
+            chkCraftingManagerIsCrafting.Checked = CraftingManager.IsCrafting;
+            chkSynthesisIsOpen.Checked = Synthesis.IsOpen;
         }
 
         private void UpdateGameObjects()
