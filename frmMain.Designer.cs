@@ -75,6 +75,9 @@
             this.grpGameObjects = new System.Windows.Forms.GroupBox();
             this.dgvGameObjects = new System.Windows.Forms.DataGridView();
             this.grpUi = new System.Windows.Forms.GroupBox();
+            this.chkJournalResultIsOpen = new System.Windows.Forms.CheckBox();
+            this.chkJournalAcceptIsOpen = new System.Windows.Forms.CheckBox();
+            this.chkSelectStringIsOpen = new System.Windows.Forms.CheckBox();
             this.chkSelectIconStringIsOpen = new System.Windows.Forms.CheckBox();
             this.chkSynthesisIsOpen = new System.Windows.Forms.CheckBox();
             this.chkCraftingManagerIsCrafting = new System.Windows.Forms.CheckBox();
@@ -84,9 +87,7 @@
             this.chkGrandCompanySupplyListIsOpen = new System.Windows.Forms.CheckBox();
             this.chkGrandCompanyExchangeIsOpen = new System.Windows.Forms.CheckBox();
             this.chkShopExchangeItemIsOpen = new System.Windows.Forms.CheckBox();
-            this.chkSelectStringIsOpen = new System.Windows.Forms.CheckBox();
-            this.chkJournalAcceptIsOpen = new System.Windows.Forms.CheckBox();
-            this.chkJournalResultIsOpen = new System.Windows.Forms.CheckBox();
+            this.chkShopProxyIsOpen = new System.Windows.Forms.CheckBox();
             this.grpPlayer.SuspendLayout();
             this.grpMap.SuspendLayout();
             this.grpGameObjects.SuspendLayout();
@@ -354,7 +355,7 @@
             // chkTalkDialogOpen
             // 
             this.chkTalkDialogOpen.AutoSize = true;
-            this.chkTalkDialogOpen.Location = new System.Drawing.Point(8, 160);
+            this.chkTalkDialogOpen.Location = new System.Drawing.Point(8, 176);
             this.chkTalkDialogOpen.Name = "chkTalkDialogOpen";
             this.chkTalkDialogOpen.Size = new System.Drawing.Size(122, 19);
             this.chkTalkDialogOpen.TabIndex = 12;
@@ -525,6 +526,7 @@
             // 
             // grpUi
             // 
+            this.grpUi.Controls.Add(this.chkShopProxyIsOpen);
             this.grpUi.Controls.Add(this.chkJournalResultIsOpen);
             this.grpUi.Controls.Add(this.chkJournalAcceptIsOpen);
             this.grpUi.Controls.Add(this.chkSelectStringIsOpen);
@@ -546,6 +548,36 @@
             this.grpUi.TabStop = false;
             this.grpUi.Text = "UI";
             // 
+            // chkJournalResultIsOpen
+            // 
+            this.chkJournalResultIsOpen.AutoSize = true;
+            this.chkJournalResultIsOpen.Location = new System.Drawing.Point(8, 80);
+            this.chkJournalResultIsOpen.Name = "chkJournalResultIsOpen";
+            this.chkJournalResultIsOpen.Size = new System.Drawing.Size(144, 19);
+            this.chkJournalResultIsOpen.TabIndex = 24;
+            this.chkJournalResultIsOpen.Text = "JournalResult.IsOpen";
+            this.chkJournalResultIsOpen.UseVisualStyleBackColor = true;
+            // 
+            // chkJournalAcceptIsOpen
+            // 
+            this.chkJournalAcceptIsOpen.AutoSize = true;
+            this.chkJournalAcceptIsOpen.Location = new System.Drawing.Point(8, 64);
+            this.chkJournalAcceptIsOpen.Name = "chkJournalAcceptIsOpen";
+            this.chkJournalAcceptIsOpen.Size = new System.Drawing.Size(151, 19);
+            this.chkJournalAcceptIsOpen.TabIndex = 23;
+            this.chkJournalAcceptIsOpen.Text = "JournalAccept.IsOpen";
+            this.chkJournalAcceptIsOpen.UseVisualStyleBackColor = true;
+            // 
+            // chkSelectStringIsOpen
+            // 
+            this.chkSelectStringIsOpen.AutoSize = true;
+            this.chkSelectStringIsOpen.Location = new System.Drawing.Point(8, 112);
+            this.chkSelectStringIsOpen.Name = "chkSelectStringIsOpen";
+            this.chkSelectStringIsOpen.Size = new System.Drawing.Size(139, 19);
+            this.chkSelectStringIsOpen.TabIndex = 22;
+            this.chkSelectStringIsOpen.Text = "SelectString.IsOpen";
+            this.chkSelectStringIsOpen.UseVisualStyleBackColor = true;
+            // 
             // chkSelectIconStringIsOpen
             // 
             this.chkSelectIconStringIsOpen.AutoSize = true;
@@ -559,7 +591,7 @@
             // chkSynthesisIsOpen
             // 
             this.chkSynthesisIsOpen.AutoSize = true;
-            this.chkSynthesisIsOpen.Location = new System.Drawing.Point(8, 224);
+            this.chkSynthesisIsOpen.Location = new System.Drawing.Point(8, 240);
             this.chkSynthesisIsOpen.Name = "chkSynthesisIsOpen";
             this.chkSynthesisIsOpen.Size = new System.Drawing.Size(124, 19);
             this.chkSynthesisIsOpen.TabIndex = 20;
@@ -569,7 +601,7 @@
             // chkCraftingManagerIsCrafting
             // 
             this.chkCraftingManagerIsCrafting.AutoSize = true;
-            this.chkCraftingManagerIsCrafting.Location = new System.Drawing.Point(8, 208);
+            this.chkCraftingManagerIsCrafting.Location = new System.Drawing.Point(8, 224);
             this.chkCraftingManagerIsCrafting.Name = "chkCraftingManagerIsCrafting";
             this.chkCraftingManagerIsCrafting.Size = new System.Drawing.Size(181, 19);
             this.chkCraftingManagerIsCrafting.TabIndex = 19;
@@ -579,7 +611,7 @@
             // chkCraftingLogIsOpen
             // 
             this.chkCraftingLogIsOpen.AutoSize = true;
-            this.chkCraftingLogIsOpen.Location = new System.Drawing.Point(8, 192);
+            this.chkCraftingLogIsOpen.Location = new System.Drawing.Point(8, 208);
             this.chkCraftingLogIsOpen.Name = "chkCraftingLogIsOpen";
             this.chkCraftingLogIsOpen.Size = new System.Drawing.Size(137, 19);
             this.chkCraftingLogIsOpen.TabIndex = 18;
@@ -636,35 +668,15 @@
             this.chkShopExchangeItemIsOpen.Text = "ShopExchangeItem.IsOpen";
             this.chkShopExchangeItemIsOpen.UseVisualStyleBackColor = true;
             // 
-            // chkSelectStringIsOpen
+            // chkShopProxyIsOpen
             // 
-            this.chkSelectStringIsOpen.AutoSize = true;
-            this.chkSelectStringIsOpen.Location = new System.Drawing.Point(8, 112);
-            this.chkSelectStringIsOpen.Name = "chkSelectStringIsOpen";
-            this.chkSelectStringIsOpen.Size = new System.Drawing.Size(139, 19);
-            this.chkSelectStringIsOpen.TabIndex = 22;
-            this.chkSelectStringIsOpen.Text = "SelectString.IsOpen";
-            this.chkSelectStringIsOpen.UseVisualStyleBackColor = true;
-            // 
-            // chkJournalAcceptIsOpen
-            // 
-            this.chkJournalAcceptIsOpen.AutoSize = true;
-            this.chkJournalAcceptIsOpen.Location = new System.Drawing.Point(8, 64);
-            this.chkJournalAcceptIsOpen.Name = "chkJournalAcceptIsOpen";
-            this.chkJournalAcceptIsOpen.Size = new System.Drawing.Size(151, 19);
-            this.chkJournalAcceptIsOpen.TabIndex = 23;
-            this.chkJournalAcceptIsOpen.Text = "JournalAccept.IsOpen";
-            this.chkJournalAcceptIsOpen.UseVisualStyleBackColor = true;
-            // 
-            // chkJournalResultIsOpen
-            // 
-            this.chkJournalResultIsOpen.AutoSize = true;
-            this.chkJournalResultIsOpen.Location = new System.Drawing.Point(8, 80);
-            this.chkJournalResultIsOpen.Name = "chkJournalResultIsOpen";
-            this.chkJournalResultIsOpen.Size = new System.Drawing.Size(144, 19);
-            this.chkJournalResultIsOpen.TabIndex = 24;
-            this.chkJournalResultIsOpen.Text = "JournalResult.IsOpen";
-            this.chkJournalResultIsOpen.UseVisualStyleBackColor = true;
+            this.chkShopProxyIsOpen.AutoSize = true;
+            this.chkShopProxyIsOpen.Location = new System.Drawing.Point(8, 160);
+            this.chkShopProxyIsOpen.Name = "chkShopProxyIsOpen";
+            this.chkShopProxyIsOpen.Size = new System.Drawing.Size(131, 19);
+            this.chkShopProxyIsOpen.TabIndex = 25;
+            this.chkShopProxyIsOpen.Text = "ShopProxy.IsOpen";
+            this.chkShopProxyIsOpen.UseVisualStyleBackColor = true;
             // 
             // frmMain
             // 
@@ -756,5 +768,6 @@
         private System.Windows.Forms.CheckBox chkSelectStringIsOpen;
         private System.Windows.Forms.CheckBox chkJournalAcceptIsOpen;
         private System.Windows.Forms.CheckBox chkJournalResultIsOpen;
+        private System.Windows.Forms.CheckBox chkShopProxyIsOpen;
     }
 }

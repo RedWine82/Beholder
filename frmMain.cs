@@ -75,6 +75,7 @@
             chkSelectStringIsOpen.Checked = SelectString.IsOpen;
             chkSelectYesnoIsOpen.Checked = SelectYesno.IsOpen;
             chkShopExchangeItemIsOpen.Checked = ShopExchangeItem.Instance.IsOpen;
+            chkShopProxyIsOpen.Checked = ShopProxy.Instance.IsOpen;
             chkTalkDialogOpen.Checked = Talk.DialogOpen;
 
             chkCraftingLogIsOpen.Checked = CraftingLog.IsOpen;
