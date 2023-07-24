@@ -31,6 +31,9 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
             this.grpPlayer = new System.Windows.Forms.GroupBox();
+            this.chkMovementManagerIsOccupied = new System.Windows.Forms.CheckBox();
+            this.chkMovementManagerIsMoving = new System.Windows.Forms.CheckBox();
+            this.chkPlayerIsCasting = new System.Windows.Forms.CheckBox();
             this.txtPlayerTargetName = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.lblPlayerMountId = new System.Windows.Forms.Label();
@@ -42,7 +45,6 @@
             this.lblPlayerPositionY = new System.Windows.Forms.Label();
             this.lblPlayerPositionX = new System.Windows.Forms.Label();
             this.chkFateManagerWithinFate = new System.Windows.Forms.CheckBox();
-            this.chkTalkDialogOpen = new System.Windows.Forms.CheckBox();
             this.chkPlayerIsAlive = new System.Windows.Forms.CheckBox();
             this.chkPlayerInCombat = new System.Windows.Forms.CheckBox();
             this.txtPlayerPositionZ = new System.Windows.Forms.TextBox();
@@ -55,8 +57,10 @@
             this.lblPlayerName = new System.Windows.Forms.Label();
             this.txtPlayerId = new System.Windows.Forms.TextBox();
             this.lblPlayerId = new System.Windows.Forms.Label();
+            this.chkTalkDialogOpen = new System.Windows.Forms.CheckBox();
             this.tmrUpdate = new System.Windows.Forms.Timer(this.components);
             this.grpMap = new System.Windows.Forms.GroupBox();
+            this.chkCommonBehaviorsIsLoading = new System.Windows.Forms.CheckBox();
             this.txtMapWeather = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.txtMapWeatherId = new System.Windows.Forms.TextBox();
@@ -70,20 +74,19 @@
             this.lblDisclaimer = new System.Windows.Forms.Label();
             this.grpGameObjects = new System.Windows.Forms.GroupBox();
             this.dgvGameObjects = new System.Windows.Forms.DataGridView();
-            this.chkPlayerIsCasting = new System.Windows.Forms.CheckBox();
             this.grpUi = new System.Windows.Forms.GroupBox();
-            this.chkMovementManagerIsMoving = new System.Windows.Forms.CheckBox();
-            this.chkMovementManagerIsOccupied = new System.Windows.Forms.CheckBox();
-            this.chkShopExchangeItemIsOpen = new System.Windows.Forms.CheckBox();
-            this.chkGrandCompanyExchangeIsOpen = new System.Windows.Forms.CheckBox();
-            this.chkGrandCompanySupplyListIsOpen = new System.Windows.Forms.CheckBox();
-            this.chkConversationIsOpen = new System.Windows.Forms.CheckBox();
-            this.chkSelectYesnoIsOpen = new System.Windows.Forms.CheckBox();
-            this.chkCraftingLogIsOpen = new System.Windows.Forms.CheckBox();
-            this.chkCraftingManagerIsCrafting = new System.Windows.Forms.CheckBox();
-            this.chkSynthesisIsOpen = new System.Windows.Forms.CheckBox();
             this.chkSelectIconStringIsOpen = new System.Windows.Forms.CheckBox();
-            this.chkCommonBehaviorsIsLoading = new System.Windows.Forms.CheckBox();
+            this.chkSynthesisIsOpen = new System.Windows.Forms.CheckBox();
+            this.chkCraftingManagerIsCrafting = new System.Windows.Forms.CheckBox();
+            this.chkCraftingLogIsOpen = new System.Windows.Forms.CheckBox();
+            this.chkSelectYesnoIsOpen = new System.Windows.Forms.CheckBox();
+            this.chkConversationIsOpen = new System.Windows.Forms.CheckBox();
+            this.chkGrandCompanySupplyListIsOpen = new System.Windows.Forms.CheckBox();
+            this.chkGrandCompanyExchangeIsOpen = new System.Windows.Forms.CheckBox();
+            this.chkShopExchangeItemIsOpen = new System.Windows.Forms.CheckBox();
+            this.chkSelectStringIsOpen = new System.Windows.Forms.CheckBox();
+            this.chkJournalAcceptIsOpen = new System.Windows.Forms.CheckBox();
+            this.chkJournalResultIsOpen = new System.Windows.Forms.CheckBox();
             this.grpPlayer.SuspendLayout();
             this.grpMap.SuspendLayout();
             this.grpGameObjects.SuspendLayout();
@@ -126,6 +129,36 @@
             this.grpPlayer.TabIndex = 0;
             this.grpPlayer.TabStop = false;
             this.grpPlayer.Text = "Player";
+            // 
+            // chkMovementManagerIsOccupied
+            // 
+            this.chkMovementManagerIsOccupied.AutoSize = true;
+            this.chkMovementManagerIsOccupied.Location = new System.Drawing.Point(8, 225);
+            this.chkMovementManagerIsOccupied.Name = "chkMovementManagerIsOccupied";
+            this.chkMovementManagerIsOccupied.Size = new System.Drawing.Size(208, 19);
+            this.chkMovementManagerIsOccupied.TabIndex = 26;
+            this.chkMovementManagerIsOccupied.Text = "MovementManager.IsOccupied";
+            this.chkMovementManagerIsOccupied.UseVisualStyleBackColor = true;
+            // 
+            // chkMovementManagerIsMoving
+            // 
+            this.chkMovementManagerIsMoving.AutoSize = true;
+            this.chkMovementManagerIsMoving.Location = new System.Drawing.Point(8, 209);
+            this.chkMovementManagerIsMoving.Name = "chkMovementManagerIsMoving";
+            this.chkMovementManagerIsMoving.Size = new System.Drawing.Size(196, 19);
+            this.chkMovementManagerIsMoving.TabIndex = 25;
+            this.chkMovementManagerIsMoving.Text = "MovementManager.IsMoving";
+            this.chkMovementManagerIsMoving.UseVisualStyleBackColor = true;
+            // 
+            // chkPlayerIsCasting
+            // 
+            this.chkPlayerIsCasting.AutoSize = true;
+            this.chkPlayerIsCasting.Location = new System.Drawing.Point(8, 192);
+            this.chkPlayerIsCasting.Name = "chkPlayerIsCasting";
+            this.chkPlayerIsCasting.Size = new System.Drawing.Size(116, 19);
+            this.chkPlayerIsCasting.TabIndex = 24;
+            this.chkPlayerIsCasting.Text = "Player.IsCasting";
+            this.chkPlayerIsCasting.UseVisualStyleBackColor = true;
             // 
             // txtPlayerTargetName
             // 
@@ -224,16 +257,6 @@
             this.chkFateManagerWithinFate.Text = "FateManager.WithinFate";
             this.chkFateManagerWithinFate.UseVisualStyleBackColor = true;
             // 
-            // chkTalkDialogOpen
-            // 
-            this.chkTalkDialogOpen.AutoSize = true;
-            this.chkTalkDialogOpen.Location = new System.Drawing.Point(8, 112);
-            this.chkTalkDialogOpen.Name = "chkTalkDialogOpen";
-            this.chkTalkDialogOpen.Size = new System.Drawing.Size(122, 19);
-            this.chkTalkDialogOpen.TabIndex = 12;
-            this.chkTalkDialogOpen.Text = "Talk.DialogOpen";
-            this.chkTalkDialogOpen.UseVisualStyleBackColor = true;
-            // 
             // chkPlayerIsAlive
             // 
             this.chkPlayerIsAlive.AutoSize = true;
@@ -328,6 +351,16 @@
             this.lblPlayerId.TabIndex = 0;
             this.lblPlayerId.Text = "ID";
             // 
+            // chkTalkDialogOpen
+            // 
+            this.chkTalkDialogOpen.AutoSize = true;
+            this.chkTalkDialogOpen.Location = new System.Drawing.Point(8, 160);
+            this.chkTalkDialogOpen.Name = "chkTalkDialogOpen";
+            this.chkTalkDialogOpen.Size = new System.Drawing.Size(122, 19);
+            this.chkTalkDialogOpen.TabIndex = 12;
+            this.chkTalkDialogOpen.Text = "Talk.DialogOpen";
+            this.chkTalkDialogOpen.UseVisualStyleBackColor = true;
+            // 
             // tmrUpdate
             // 
             this.tmrUpdate.Interval = 500;
@@ -353,6 +386,16 @@
             this.grpMap.TabIndex = 22;
             this.grpMap.TabStop = false;
             this.grpMap.Text = "Map";
+            // 
+            // chkCommonBehaviorsIsLoading
+            // 
+            this.chkCommonBehaviorsIsLoading.AutoSize = true;
+            this.chkCommonBehaviorsIsLoading.Location = new System.Drawing.Point(8, 240);
+            this.chkCommonBehaviorsIsLoading.Name = "chkCommonBehaviorsIsLoading";
+            this.chkCommonBehaviorsIsLoading.Size = new System.Drawing.Size(194, 19);
+            this.chkCommonBehaviorsIsLoading.TabIndex = 28;
+            this.chkCommonBehaviorsIsLoading.Text = "CommonBehaviors.IsLoading";
+            this.chkCommonBehaviorsIsLoading.UseVisualStyleBackColor = true;
             // 
             // txtMapWeather
             // 
@@ -480,18 +523,11 @@
             this.dgvGameObjects.TabIndex = 25;
             this.dgvGameObjects.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.dgvGameObjects_DataError);
             // 
-            // chkPlayerIsCasting
-            // 
-            this.chkPlayerIsCasting.AutoSize = true;
-            this.chkPlayerIsCasting.Location = new System.Drawing.Point(8, 192);
-            this.chkPlayerIsCasting.Name = "chkPlayerIsCasting";
-            this.chkPlayerIsCasting.Size = new System.Drawing.Size(116, 19);
-            this.chkPlayerIsCasting.TabIndex = 24;
-            this.chkPlayerIsCasting.Text = "Player.IsCasting";
-            this.chkPlayerIsCasting.UseVisualStyleBackColor = true;
-            // 
             // grpUi
             // 
+            this.grpUi.Controls.Add(this.chkJournalResultIsOpen);
+            this.grpUi.Controls.Add(this.chkJournalAcceptIsOpen);
+            this.grpUi.Controls.Add(this.chkSelectStringIsOpen);
             this.grpUi.Controls.Add(this.chkSelectIconStringIsOpen);
             this.grpUi.Controls.Add(this.chkSynthesisIsOpen);
             this.grpUi.Controls.Add(this.chkCraftingManagerIsCrafting);
@@ -510,55 +546,55 @@
             this.grpUi.TabStop = false;
             this.grpUi.Text = "UI";
             // 
-            // chkMovementManagerIsMoving
+            // chkSelectIconStringIsOpen
             // 
-            this.chkMovementManagerIsMoving.AutoSize = true;
-            this.chkMovementManagerIsMoving.Location = new System.Drawing.Point(8, 209);
-            this.chkMovementManagerIsMoving.Name = "chkMovementManagerIsMoving";
-            this.chkMovementManagerIsMoving.Size = new System.Drawing.Size(196, 19);
-            this.chkMovementManagerIsMoving.TabIndex = 25;
-            this.chkMovementManagerIsMoving.Text = "MovementManager.IsMoving";
-            this.chkMovementManagerIsMoving.UseVisualStyleBackColor = true;
+            this.chkSelectIconStringIsOpen.AutoSize = true;
+            this.chkSelectIconStringIsOpen.Location = new System.Drawing.Point(8, 96);
+            this.chkSelectIconStringIsOpen.Name = "chkSelectIconStringIsOpen";
+            this.chkSelectIconStringIsOpen.Size = new System.Drawing.Size(164, 19);
+            this.chkSelectIconStringIsOpen.TabIndex = 21;
+            this.chkSelectIconStringIsOpen.Text = "SelectIconString.IsOpen";
+            this.chkSelectIconStringIsOpen.UseVisualStyleBackColor = true;
             // 
-            // chkMovementManagerIsOccupied
+            // chkSynthesisIsOpen
             // 
-            this.chkMovementManagerIsOccupied.AutoSize = true;
-            this.chkMovementManagerIsOccupied.Location = new System.Drawing.Point(8, 225);
-            this.chkMovementManagerIsOccupied.Name = "chkMovementManagerIsOccupied";
-            this.chkMovementManagerIsOccupied.Size = new System.Drawing.Size(208, 19);
-            this.chkMovementManagerIsOccupied.TabIndex = 26;
-            this.chkMovementManagerIsOccupied.Text = "MovementManager.IsOccupied";
-            this.chkMovementManagerIsOccupied.UseVisualStyleBackColor = true;
+            this.chkSynthesisIsOpen.AutoSize = true;
+            this.chkSynthesisIsOpen.Location = new System.Drawing.Point(8, 224);
+            this.chkSynthesisIsOpen.Name = "chkSynthesisIsOpen";
+            this.chkSynthesisIsOpen.Size = new System.Drawing.Size(124, 19);
+            this.chkSynthesisIsOpen.TabIndex = 20;
+            this.chkSynthesisIsOpen.Text = "Synthesis.IsOpen";
+            this.chkSynthesisIsOpen.UseVisualStyleBackColor = true;
             // 
-            // chkShopExchangeItemIsOpen
+            // chkCraftingManagerIsCrafting
             // 
-            this.chkShopExchangeItemIsOpen.AutoSize = true;
-            this.chkShopExchangeItemIsOpen.Location = new System.Drawing.Point(8, 96);
-            this.chkShopExchangeItemIsOpen.Name = "chkShopExchangeItemIsOpen";
-            this.chkShopExchangeItemIsOpen.Size = new System.Drawing.Size(181, 19);
-            this.chkShopExchangeItemIsOpen.TabIndex = 13;
-            this.chkShopExchangeItemIsOpen.Text = "ShopExchangeItem.IsOpen";
-            this.chkShopExchangeItemIsOpen.UseVisualStyleBackColor = true;
+            this.chkCraftingManagerIsCrafting.AutoSize = true;
+            this.chkCraftingManagerIsCrafting.Location = new System.Drawing.Point(8, 208);
+            this.chkCraftingManagerIsCrafting.Name = "chkCraftingManagerIsCrafting";
+            this.chkCraftingManagerIsCrafting.Size = new System.Drawing.Size(181, 19);
+            this.chkCraftingManagerIsCrafting.TabIndex = 19;
+            this.chkCraftingManagerIsCrafting.Text = "CraftingManager.IsCrafting";
+            this.chkCraftingManagerIsCrafting.UseVisualStyleBackColor = true;
             // 
-            // chkGrandCompanyExchangeIsOpen
+            // chkCraftingLogIsOpen
             // 
-            this.chkGrandCompanyExchangeIsOpen.AutoSize = true;
-            this.chkGrandCompanyExchangeIsOpen.Location = new System.Drawing.Point(8, 32);
-            this.chkGrandCompanyExchangeIsOpen.Name = "chkGrandCompanyExchangeIsOpen";
-            this.chkGrandCompanyExchangeIsOpen.Size = new System.Drawing.Size(216, 19);
-            this.chkGrandCompanyExchangeIsOpen.TabIndex = 14;
-            this.chkGrandCompanyExchangeIsOpen.Text = "GrandCompanyExchange.IsOpen";
-            this.chkGrandCompanyExchangeIsOpen.UseVisualStyleBackColor = true;
+            this.chkCraftingLogIsOpen.AutoSize = true;
+            this.chkCraftingLogIsOpen.Location = new System.Drawing.Point(8, 192);
+            this.chkCraftingLogIsOpen.Name = "chkCraftingLogIsOpen";
+            this.chkCraftingLogIsOpen.Size = new System.Drawing.Size(137, 19);
+            this.chkCraftingLogIsOpen.TabIndex = 18;
+            this.chkCraftingLogIsOpen.Text = "CraftingLog.IsOpen";
+            this.chkCraftingLogIsOpen.UseVisualStyleBackColor = true;
             // 
-            // chkGrandCompanySupplyListIsOpen
+            // chkSelectYesnoIsOpen
             // 
-            this.chkGrandCompanySupplyListIsOpen.AutoSize = true;
-            this.chkGrandCompanySupplyListIsOpen.Location = new System.Drawing.Point(8, 48);
-            this.chkGrandCompanySupplyListIsOpen.Name = "chkGrandCompanySupplyListIsOpen";
-            this.chkGrandCompanySupplyListIsOpen.Size = new System.Drawing.Size(220, 19);
-            this.chkGrandCompanySupplyListIsOpen.TabIndex = 15;
-            this.chkGrandCompanySupplyListIsOpen.Text = "GrandCompanySupplyList.IsOpen";
-            this.chkGrandCompanySupplyListIsOpen.UseVisualStyleBackColor = true;
+            this.chkSelectYesnoIsOpen.AutoSize = true;
+            this.chkSelectYesnoIsOpen.Location = new System.Drawing.Point(8, 128);
+            this.chkSelectYesnoIsOpen.Name = "chkSelectYesnoIsOpen";
+            this.chkSelectYesnoIsOpen.Size = new System.Drawing.Size(140, 19);
+            this.chkSelectYesnoIsOpen.TabIndex = 17;
+            this.chkSelectYesnoIsOpen.Text = "SelectYesno.IsOpen";
+            this.chkSelectYesnoIsOpen.UseVisualStyleBackColor = true;
             // 
             // chkConversationIsOpen
             // 
@@ -570,65 +606,65 @@
             this.chkConversationIsOpen.Text = "Conversation.IsOpen";
             this.chkConversationIsOpen.UseVisualStyleBackColor = true;
             // 
-            // chkSelectYesnoIsOpen
+            // chkGrandCompanySupplyListIsOpen
             // 
-            this.chkSelectYesnoIsOpen.AutoSize = true;
-            this.chkSelectYesnoIsOpen.Location = new System.Drawing.Point(8, 64);
-            this.chkSelectYesnoIsOpen.Name = "chkSelectYesnoIsOpen";
-            this.chkSelectYesnoIsOpen.Size = new System.Drawing.Size(140, 19);
-            this.chkSelectYesnoIsOpen.TabIndex = 17;
-            this.chkSelectYesnoIsOpen.Text = "SelectYesno.IsOpen";
-            this.chkSelectYesnoIsOpen.UseVisualStyleBackColor = true;
+            this.chkGrandCompanySupplyListIsOpen.AutoSize = true;
+            this.chkGrandCompanySupplyListIsOpen.Location = new System.Drawing.Point(8, 48);
+            this.chkGrandCompanySupplyListIsOpen.Name = "chkGrandCompanySupplyListIsOpen";
+            this.chkGrandCompanySupplyListIsOpen.Size = new System.Drawing.Size(220, 19);
+            this.chkGrandCompanySupplyListIsOpen.TabIndex = 15;
+            this.chkGrandCompanySupplyListIsOpen.Text = "GrandCompanySupplyList.IsOpen";
+            this.chkGrandCompanySupplyListIsOpen.UseVisualStyleBackColor = true;
             // 
-            // chkCraftingLogIsOpen
+            // chkGrandCompanyExchangeIsOpen
             // 
-            this.chkCraftingLogIsOpen.AutoSize = true;
-            this.chkCraftingLogIsOpen.Location = new System.Drawing.Point(8, 144);
-            this.chkCraftingLogIsOpen.Name = "chkCraftingLogIsOpen";
-            this.chkCraftingLogIsOpen.Size = new System.Drawing.Size(137, 19);
-            this.chkCraftingLogIsOpen.TabIndex = 18;
-            this.chkCraftingLogIsOpen.Text = "CraftingLog.IsOpen";
-            this.chkCraftingLogIsOpen.UseVisualStyleBackColor = true;
+            this.chkGrandCompanyExchangeIsOpen.AutoSize = true;
+            this.chkGrandCompanyExchangeIsOpen.Location = new System.Drawing.Point(8, 32);
+            this.chkGrandCompanyExchangeIsOpen.Name = "chkGrandCompanyExchangeIsOpen";
+            this.chkGrandCompanyExchangeIsOpen.Size = new System.Drawing.Size(216, 19);
+            this.chkGrandCompanyExchangeIsOpen.TabIndex = 14;
+            this.chkGrandCompanyExchangeIsOpen.Text = "GrandCompanyExchange.IsOpen";
+            this.chkGrandCompanyExchangeIsOpen.UseVisualStyleBackColor = true;
             // 
-            // chkCraftingManagerIsCrafting
+            // chkShopExchangeItemIsOpen
             // 
-            this.chkCraftingManagerIsCrafting.AutoSize = true;
-            this.chkCraftingManagerIsCrafting.Location = new System.Drawing.Point(8, 160);
-            this.chkCraftingManagerIsCrafting.Name = "chkCraftingManagerIsCrafting";
-            this.chkCraftingManagerIsCrafting.Size = new System.Drawing.Size(181, 19);
-            this.chkCraftingManagerIsCrafting.TabIndex = 19;
-            this.chkCraftingManagerIsCrafting.Text = "CraftingManager.IsCrafting";
-            this.chkCraftingManagerIsCrafting.UseVisualStyleBackColor = true;
+            this.chkShopExchangeItemIsOpen.AutoSize = true;
+            this.chkShopExchangeItemIsOpen.Location = new System.Drawing.Point(8, 144);
+            this.chkShopExchangeItemIsOpen.Name = "chkShopExchangeItemIsOpen";
+            this.chkShopExchangeItemIsOpen.Size = new System.Drawing.Size(181, 19);
+            this.chkShopExchangeItemIsOpen.TabIndex = 13;
+            this.chkShopExchangeItemIsOpen.Text = "ShopExchangeItem.IsOpen";
+            this.chkShopExchangeItemIsOpen.UseVisualStyleBackColor = true;
             // 
-            // chkSynthesisIsOpen
+            // chkSelectStringIsOpen
             // 
-            this.chkSynthesisIsOpen.AutoSize = true;
-            this.chkSynthesisIsOpen.Location = new System.Drawing.Point(8, 176);
-            this.chkSynthesisIsOpen.Name = "chkSynthesisIsOpen";
-            this.chkSynthesisIsOpen.Size = new System.Drawing.Size(124, 19);
-            this.chkSynthesisIsOpen.TabIndex = 20;
-            this.chkSynthesisIsOpen.Text = "Synthesis.IsOpen";
-            this.chkSynthesisIsOpen.UseVisualStyleBackColor = true;
+            this.chkSelectStringIsOpen.AutoSize = true;
+            this.chkSelectStringIsOpen.Location = new System.Drawing.Point(8, 112);
+            this.chkSelectStringIsOpen.Name = "chkSelectStringIsOpen";
+            this.chkSelectStringIsOpen.Size = new System.Drawing.Size(139, 19);
+            this.chkSelectStringIsOpen.TabIndex = 22;
+            this.chkSelectStringIsOpen.Text = "SelectString.IsOpen";
+            this.chkSelectStringIsOpen.UseVisualStyleBackColor = true;
             // 
-            // chkSelectIconStringIsOpen
+            // chkJournalAcceptIsOpen
             // 
-            this.chkSelectIconStringIsOpen.AutoSize = true;
-            this.chkSelectIconStringIsOpen.Location = new System.Drawing.Point(8, 80);
-            this.chkSelectIconStringIsOpen.Name = "chkSelectIconStringIsOpen";
-            this.chkSelectIconStringIsOpen.Size = new System.Drawing.Size(164, 19);
-            this.chkSelectIconStringIsOpen.TabIndex = 21;
-            this.chkSelectIconStringIsOpen.Text = "SelectIconString.IsOpen";
-            this.chkSelectIconStringIsOpen.UseVisualStyleBackColor = true;
+            this.chkJournalAcceptIsOpen.AutoSize = true;
+            this.chkJournalAcceptIsOpen.Location = new System.Drawing.Point(8, 64);
+            this.chkJournalAcceptIsOpen.Name = "chkJournalAcceptIsOpen";
+            this.chkJournalAcceptIsOpen.Size = new System.Drawing.Size(151, 19);
+            this.chkJournalAcceptIsOpen.TabIndex = 23;
+            this.chkJournalAcceptIsOpen.Text = "JournalAccept.IsOpen";
+            this.chkJournalAcceptIsOpen.UseVisualStyleBackColor = true;
             // 
-            // chkCommonBehaviorsIsLoading
+            // chkJournalResultIsOpen
             // 
-            this.chkCommonBehaviorsIsLoading.AutoSize = true;
-            this.chkCommonBehaviorsIsLoading.Location = new System.Drawing.Point(8, 240);
-            this.chkCommonBehaviorsIsLoading.Name = "chkCommonBehaviorsIsLoading";
-            this.chkCommonBehaviorsIsLoading.Size = new System.Drawing.Size(194, 19);
-            this.chkCommonBehaviorsIsLoading.TabIndex = 28;
-            this.chkCommonBehaviorsIsLoading.Text = "CommonBehaviors.IsLoading";
-            this.chkCommonBehaviorsIsLoading.UseVisualStyleBackColor = true;
+            this.chkJournalResultIsOpen.AutoSize = true;
+            this.chkJournalResultIsOpen.Location = new System.Drawing.Point(8, 80);
+            this.chkJournalResultIsOpen.Name = "chkJournalResultIsOpen";
+            this.chkJournalResultIsOpen.Size = new System.Drawing.Size(144, 19);
+            this.chkJournalResultIsOpen.TabIndex = 24;
+            this.chkJournalResultIsOpen.Text = "JournalResult.IsOpen";
+            this.chkJournalResultIsOpen.UseVisualStyleBackColor = true;
             // 
             // frmMain
             // 
@@ -717,5 +753,8 @@
         private System.Windows.Forms.CheckBox chkCraftingLogIsOpen;
         private System.Windows.Forms.CheckBox chkSelectIconStringIsOpen;
         private System.Windows.Forms.CheckBox chkCommonBehaviorsIsLoading;
+        private System.Windows.Forms.CheckBox chkSelectStringIsOpen;
+        private System.Windows.Forms.CheckBox chkJournalAcceptIsOpen;
+        private System.Windows.Forms.CheckBox chkJournalResultIsOpen;
     }
 }

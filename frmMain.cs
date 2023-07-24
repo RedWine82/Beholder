@@ -69,8 +69,11 @@
             chkConversationIsOpen.Checked = Conversation.IsOpen;
             chkGrandCompanyExchangeIsOpen.Checked = GrandCompanyExchange.Instance.IsOpen;
             chkGrandCompanySupplyListIsOpen.Checked = GrandCompanySupplyList.Instance.IsOpen;
-            chkSelectYesnoIsOpen.Checked = SelectYesno.IsOpen;
+            chkJournalAcceptIsOpen.Checked = JournalAccept.IsOpen;
+            chkJournalResultIsOpen.Checked = JournalResult.IsOpen;
             chkSelectIconStringIsOpen.Checked = SelectIconString.IsOpen;
+            chkSelectStringIsOpen.Checked = SelectString.IsOpen;
+            chkSelectYesnoIsOpen.Checked = SelectYesno.IsOpen;
             chkShopExchangeItemIsOpen.Checked = ShopExchangeItem.Instance.IsOpen;
             chkTalkDialogOpen.Checked = Talk.DialogOpen;
 
