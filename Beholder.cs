@@ -14,7 +14,7 @@
         internal Thread _guiThread;
         internal frmMain form;
         private static volatile int _pulseDelay = 500;
-        private static volatile PulseFlags _pulseFlags = PulseFlags.Party | PulseFlags.GameEvents | PulseFlags.Navigator | PulseFlags.ObjectManager;
+        private static volatile PulseFlags _pulseFlags = PulseFlags.All;
         private static Thread _pulseThread;
         private static volatile bool _pulseThreadRunning;
 
