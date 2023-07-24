@@ -31,6 +31,8 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
             this.grpPlayer = new System.Windows.Forms.GroupBox();
+            this.txtPlayerTargetName = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.lblPlayerMountId = new System.Windows.Forms.Label();
             this.txtPlayerMountId = new System.Windows.Forms.TextBox();
             this.chkPlayerIsMounted = new System.Windows.Forms.CheckBox();
@@ -68,8 +70,6 @@
             this.lblDisclaimer = new System.Windows.Forms.Label();
             this.grpGameObjects = new System.Windows.Forms.GroupBox();
             this.dgvGameObjects = new System.Windows.Forms.DataGridView();
-            this.txtPlayerTargetName = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
             this.grpPlayer.SuspendLayout();
             this.grpMap.SuspendLayout();
             this.grpGameObjects.SuspendLayout();
@@ -109,6 +109,21 @@
             this.grpPlayer.TabIndex = 0;
             this.grpPlayer.TabStop = false;
             this.grpPlayer.Text = "Player";
+            // 
+            // txtPlayerTargetName
+            // 
+            this.txtPlayerTargetName.Location = new System.Drawing.Point(96, 88);
+            this.txtPlayerTargetName.Name = "txtPlayerTargetName";
+            this.txtPlayerTargetName.Size = new System.Drawing.Size(224, 22);
+            this.txtPlayerTargetName.TabIndex = 23;
+            // 
+            // label3
+            // 
+            this.label3.Location = new System.Drawing.Point(8, 91);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(88, 16);
+            this.label3.TabIndex = 22;
+            this.label3.Text = "Target Name";
             // 
             // lblPlayerMountId
             // 
@@ -416,12 +431,14 @@
             // 
             // grpGameObjects
             // 
-            this.grpGameObjects.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.grpGameObjects.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.grpGameObjects.Controls.Add(this.dgvGameObjects);
             this.grpGameObjects.ForeColor = System.Drawing.Color.White;
             this.grpGameObjects.Location = new System.Drawing.Point(8, 280);
             this.grpGameObjects.Name = "grpGameObjects";
-            this.grpGameObjects.Size = new System.Drawing.Size(664, 304);
+            this.grpGameObjects.Size = new System.Drawing.Size(1008, 312);
             this.grpGameObjects.TabIndex = 24;
             this.grpGameObjects.TabStop = false;
             this.grpGameObjects.Text = "Game Objects";
@@ -437,23 +454,13 @@
             this.dgvGameObjects.Location = new System.Drawing.Point(8, 24);
             this.dgvGameObjects.Name = "dgvGameObjects";
             this.dgvGameObjects.ReadOnly = true;
-            this.dgvGameObjects.Size = new System.Drawing.Size(648, 272);
+            this.dgvGameObjects.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.Color.White;
+            this.dgvGameObjects.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.Black;
+            this.dgvGameObjects.RowTemplate.DefaultCellStyle.SelectionBackColor = System.Drawing.Color.RoyalBlue;
+            this.dgvGameObjects.RowTemplate.DefaultCellStyle.SelectionForeColor = System.Drawing.Color.White;
+            this.dgvGameObjects.Size = new System.Drawing.Size(992, 280);
             this.dgvGameObjects.TabIndex = 25;
-            // 
-            // txtPlayerTargetName
-            // 
-            this.txtPlayerTargetName.Location = new System.Drawing.Point(96, 88);
-            this.txtPlayerTargetName.Name = "txtPlayerTargetName";
-            this.txtPlayerTargetName.Size = new System.Drawing.Size(224, 22);
-            this.txtPlayerTargetName.TabIndex = 23;
-            // 
-            // label3
-            // 
-            this.label3.Location = new System.Drawing.Point(8, 91);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(88, 16);
-            this.label3.TabIndex = 22;
-            this.label3.Text = "Target Name";
+            this.dgvGameObjects.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.dgvGameObjects_DataError);
             // 
             // frmMain
             // 
@@ -466,11 +473,8 @@
             this.Controls.Add(this.grpMap);
             this.Controls.Add(this.grpPlayer);
             this.Font = new System.Drawing.Font("Lucida Sans", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.MaximizeBox = false;
-            this.MinimizeBox = false;
             this.Name = "frmMain";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.Text = "Beholder";

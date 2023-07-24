@@ -13,18 +13,10 @@
     {
         internal Thread _guiThread;
         internal frmMain form;
-        private static volatile int _pulseDelay = 500;
-        private static volatile PulseFlags _pulseFlags = PulseFlags.All;
-        private static Thread _pulseThread;
-        private static volatile bool _pulseThreadRunning;
 
         public Beholder()
         {
             OffsetManager.Init();
-
-            _pulseThread = new Thread(PulseThread) { IsBackground = true, Name = "Beholder Pulse Thread" };
-            _pulseThreadRunning = true;
-            _pulseThread.Start();
         }
 
         public override string Author => "RedWine";
@@ -66,8 +58,6 @@
         {
             CloseForm();
 
-            _pulseThreadRunning = false;
-            _pulseThread.Join();
             base.OnShutdown();
         }
 
@@ -90,26 +80,6 @@
             else
             {
                 CloseForm();
-            }
-        }
-
-        private static void PulseThread()
-        {
-            while (_pulseThreadRunning)
-            {
-                try
-                {
-                    if (!TreeRoot.IsRunning)
-                    {
-                        Pulsator.Pulse(_pulseFlags);
-                    }
-                }
-                catch (Exception e)
-                {
-                    Logging.WriteException(e);
-                }
-
-                Thread.Sleep(_pulseDelay);
             }
         }
 

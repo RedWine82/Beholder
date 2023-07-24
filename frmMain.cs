@@ -1,11 +1,13 @@
 ﻿namespace Beholder
 {
     using System;
+    using System.Linq;
     using System.Threading;
     using System.Windows.Forms;
     using ff14bot;
     using ff14bot.Behavior;
     using ff14bot.Managers;
+    using ff14bot.Objects;
     using ff14bot.RemoteWindows;
     using LlamaLibrary.Extensions;
 
@@ -20,6 +22,8 @@
         {
             if (Core.Player == null)
                 return;
+
+            Pulsator.Pulse(PulseFlags.All);
 
             txtPlayerId.Text = Core.Player.ObjectId.ToString();
             txtPlayerName.Text = Core.Player.Name;
@@ -55,12 +59,17 @@
 
         private void UpdateGameObjects()
         {
-            //foreach (GameObject GameObjectManager.GameObjects
+            /*foreach (GameObject gameObject in GameObjectManager.GameObjects.ToList())
+            {
+                dgvGameObjects.
+            }*/
         }
 
         private void frmMain_Load(object sender, EventArgs e)
         {
             UpdateData();
+
+            dgvGameObjects.DataSource = GameObjectManager.GameObjects.ToList();
             tmrUpdate.Enabled = true;
         }
 
@@ -72,6 +81,10 @@
         private void frmMain_FormClosing(object sender, FormClosingEventArgs e)
         {
             tmrUpdate.Enabled = false;
+        }
+
+        private void dgvGameObjects_DataError(object sender, DataGridViewDataErrorEventArgs e)
+        {
         }
     }
 }
