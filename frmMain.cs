@@ -1,8 +1,9 @@
 ﻿namespace Beholder
 {
     using System;
+    using System.Collections.Generic;
+    using System.ComponentModel;
     using System.Linq;
-    using System.Threading;
     using System.Windows.Forms;
     using ff14bot;
     using ff14bot.Behavior;
@@ -13,6 +14,8 @@
 
     public partial class frmMain : Form
     {
+        private List<GameObject> gameObjects;
+
         public frmMain()
         {
             InitializeComponent();
@@ -53,23 +56,19 @@
 
             txtMapWeatherId.Text = WorldManager.CurrentWeatherId.ToString();
             txtMapWeather.Text = WorldManager.CurrentWeather;
-
-            UpdateGameObjects();
         }
 
         private void UpdateGameObjects()
         {
-            /*foreach (GameObject gameObject in GameObjectManager.GameObjects.ToList())
-            {
-                dgvGameObjects.
-            }*/
+            gameObjects = GameObjectManager.GameObjects.ToList();
         }
 
         private void frmMain_Load(object sender, EventArgs e)
         {
             UpdateData();
+            UpdateGameObjects();
 
-            dgvGameObjects.DataSource = GameObjectManager.GameObjects.ToList();
+            dgvGameObjects.DataSource = gameObjects;
             tmrUpdate.Enabled = true;
         }
 

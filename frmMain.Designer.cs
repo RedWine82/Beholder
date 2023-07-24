@@ -441,7 +441,7 @@
             this.grpGameObjects.Size = new System.Drawing.Size(1008, 312);
             this.grpGameObjects.TabIndex = 24;
             this.grpGameObjects.TabStop = false;
-            this.grpGameObjects.Text = "Game Objects";
+            this.grpGameObjects.Text = "Game Objects (Does not update automatically, close window and reopen to update)";
             // 
             // dgvGameObjects
             // 
