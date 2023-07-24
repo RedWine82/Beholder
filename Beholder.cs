@@ -49,11 +49,6 @@
             CloseForm();
         }
 
-        public override void OnEnabled()
-        {
-            ToggleGUI();
-        }
-
         public override void OnShutdown()
         {
             CloseForm();
