@@ -2,7 +2,7 @@
 {
     using System;
     using System.Collections.Generic;
-    using System.ComponentModel;
+    using System.Runtime.InteropServices;
     using System.Linq;
     using System.Windows.Forms;
     using Clio.Utilities;
@@ -17,6 +17,11 @@
     public partial class frmMain : Form
     {
         private List<GameObject> gameObjects;
+        private static readonly IntPtr HWND_TOPMOST = new IntPtr(-1);
+        private static readonly IntPtr HWND_NOTOPMOST = new IntPtr(-2);
+        private const UInt32 SWP_NOSIZE = 0x0001;
+        private const UInt32 SWP_NOMOVE = 0x0002;
+        private const UInt32 TOPMOST_FLAGS = SWP_NOMOVE | SWP_NOSIZE;
 
         public frmMain()
         {
@@ -119,5 +124,14 @@
         {
             return $"{position.X.ToString("0.00")}, {position.Y.ToString("0.00")}, {position.Z.ToString("0.00")}";
         }
+
+        private void chkAlwaysOnTop_CheckedChanged(object sender, EventArgs e)
+        {
+            SetWindowPos(this.Handle, chkAlwaysOnTop.Checked ? HWND_TOPMOST : HWND_NOTOPMOST, 0, 0, 0, 0, TOPMOST_FLAGS);
+        }
+
+        [DllImport("user32.dll")]
+        [return: MarshalAs(UnmanagedType.Bool)]
+        public static extern bool SetWindowPos(IntPtr hWnd, IntPtr hWndInsertAfter, int X, int Y, int cx, int cy, uint uFlags);
     }
 }
