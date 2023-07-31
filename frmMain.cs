@@ -5,6 +5,7 @@
     using System.ComponentModel;
     using System.Linq;
     using System.Windows.Forms;
+    using Clio.Utilities;
     using ff14bot;
     using ff14bot.Behavior;
     using ff14bot.Managers;
@@ -34,12 +35,12 @@
             // Player
             txtPlayerId.Text = Core.Player.ObjectId.ToString();
             txtPlayerName.Text = Core.Player.Name;
-            txtPlayerTargetId.Text = GameObjectManager.Target == null ? "NULL" : GameObjectManager.Target.ObjectId.ToString(); //Core.Player.CurrentTargetId.ToString();
-            txtPlayerTargetName.Text = GameObjectManager.Target == null ? "" : GameObjectManager.Target.Name; //Core.Player.CurrentTargetId.ToString();
 
-            txtPlayerPositionX.Text = Core.Player.Location.X.ToString("0.00");
-            txtPlayerPositionY.Text = Core.Player.Location.Y.ToString("0.00");
-            txtPlayerPositionZ.Text = Core.Player.Location.Z.ToString("0.00");
+            txtPlayerTargetId.Text = GameObjectManager.Target == null ? "NULL" : GameObjectManager.Target.ObjectId.ToString();
+            txtPlayerTargetNpcId.Text = GameObjectManager.Target == null ? "" : GameObjectManager.Target.NpcId.ToString();
+            txtPlayerTargetName.Text = GameObjectManager.Target == null ? "" : GameObjectManager.Target.Name;
+
+            txtPlayerTargetPos.Text = GameObjectManager.Target == null ? "" : FormatPosition(GameObjectManager.Target.Location);
 
             chkPlayerIsMounted.Checked = Core.Player.IsMounted;
 
@@ -59,11 +60,14 @@
             // Map
             txtMapId.Text = WorldManager.ZoneId.ToString();
             txtMapName.Text = WorldManager.CurrentZoneName;
-            chkMapWorldManagerCanFly.Checked = WorldManager.CanFly;
-            chkMapWorldManagerCanTeleport.Checked = WorldManager.CanTeleport();
 
             txtMapWeatherId.Text = WorldManager.CurrentWeatherId.ToString();
             txtMapWeather.Text = WorldManager.CurrentWeather;
+
+            txtMapPlayerPosition.Text = FormatPosition(Core.Player.Location);
+
+            chkMapWorldManagerCanFly.Checked = WorldManager.CanFly;
+            chkMapWorldManagerCanTeleport.Checked = WorldManager.CanTeleport();
 
             // UI
             chkConversationIsOpen.Checked = Conversation.IsOpen;
@@ -109,6 +113,11 @@
 
         private void dgvGameObjects_DataError(object sender, DataGridViewDataErrorEventArgs e)
         {
+        }
+
+        private string FormatPosition(Vector3 position)
+        {
+            return $"{position.X.ToString("0.00")}, {position.Y.ToString("0.00")}, {position.Z.ToString("0.00")}";
         }
     }
 }
