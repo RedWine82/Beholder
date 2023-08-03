@@ -668,6 +668,7 @@
             // 
             // chkAlwaysOnTop
             // 
+            this.chkAlwaysOnTop.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.chkAlwaysOnTop.AutoSize = true;
             this.chkAlwaysOnTop.ForeColor = System.Drawing.Color.White;
             this.chkAlwaysOnTop.Location = new System.Drawing.Point(896, 8);
