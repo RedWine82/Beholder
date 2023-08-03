@@ -37,59 +37,66 @@
             if (Core.Player == null)
                 return;
 
-            // Player
-            txtPlayerId.Text = Core.Player.ObjectId.ToString();
-            txtPlayerName.Text = Core.Player.Name;
+            try
+            {
+                // Player
+                txtPlayerId.Text = Core.Player.ObjectId.ToString();
+                txtPlayerName.Text = Core.Player.Name;
 
-            txtPlayerTargetId.Text = GameObjectManager.Target == null ? "NULL" : GameObjectManager.Target.ObjectId.ToString();
-            txtPlayerTargetNpcId.Text = GameObjectManager.Target == null ? "" : GameObjectManager.Target.NpcId.ToString();
-            txtPlayerTargetName.Text = GameObjectManager.Target == null ? "" : GameObjectManager.Target.Name;
+                txtPlayerTargetId.Text = GameObjectManager.Target == null ? "NULL" : GameObjectManager.Target.ObjectId.ToString();
+                txtPlayerTargetNpcId.Text = GameObjectManager.Target == null ? "" : GameObjectManager.Target.NpcId.ToString();
+                txtPlayerTargetName.Text = GameObjectManager.Target == null ? "" : GameObjectManager.Target.Name;
 
-            txtPlayerTargetPos.Text = GameObjectManager.Target == null ? "" : FormatPosition(GameObjectManager.Target.Location);
+                txtPlayerTargetPos.Text = GameObjectManager.Target == null ? "" : FormatPosition(GameObjectManager.Target.Location);
 
-            chkPlayerIsMounted.Checked = Core.Player.IsMounted;
+                chkPlayerIsMounted.Checked = Core.Player.IsMounted;
 
-            chkPlayerInCombat.Checked = Core.Player.InCombat;
-            chkPlayerIsAlive.Checked = Core.Player.IsAlive;
-            chkPlayerIsCasting.Checked = Core.Player.IsCasting;
+                chkPlayerInCombat.Checked = Core.Player.InCombat;
+                chkPlayerIsAlive.Checked = Core.Player.IsAlive;
+                chkPlayerIsCasting.Checked = Core.Player.IsCasting;
 
-            chkDutyManagerDutyReady.Checked = DutyManager.DutyReady;
-            chkDutyManagerInInstance.Checked = DutyManager.InInstance;
-            chkFateManagerWithinFate.Checked = FateManager.WithinFate;
+                chkDutyManagerDutyReady.Checked = DutyManager.DutyReady;
+                chkDutyManagerInInstance.Checked = DutyManager.InInstance;
+                chkFateManagerWithinFate.Checked = FateManager.WithinFate;
 
-            txtPlayerMountId.Text = LocalPlayerExtensions.CurrentMount(Core.Player).ToString();
+                txtPlayerMountId.Text = LocalPlayerExtensions.CurrentMount(Core.Player).ToString();
 
-            chkMovementManagerIsMoving.Checked = MovementManager.IsMoving;
-            chkMovementManagerIsOccupied.Checked = MovementManager.IsOccupied;
+                chkMovementManagerIsMoving.Checked = MovementManager.IsMoving;
+                chkMovementManagerIsOccupied.Checked = MovementManager.IsOccupied;
 
-            // Map
-            txtMapId.Text = WorldManager.ZoneId.ToString();
-            txtMapName.Text = WorldManager.CurrentZoneName;
+                // Map
+                txtMapId.Text = WorldManager.ZoneId.ToString();
+                txtMapName.Text = WorldManager.CurrentZoneName;
 
-            txtMapWeatherId.Text = WorldManager.CurrentWeatherId.ToString();
-            txtMapWeather.Text = WorldManager.CurrentWeather;
+                txtMapWeatherId.Text = WorldManager.CurrentWeatherId.ToString();
+                txtMapWeather.Text = WorldManager.CurrentWeather;
 
-            txtMapPlayerPosition.Text = FormatPosition(Core.Player.Location);
+                txtMapPlayerPosition.Text = FormatPosition(Core.Player.Location);
 
-            chkMapWorldManagerCanFly.Checked = WorldManager.CanFly;
-            chkMapWorldManagerCanTeleport.Checked = WorldManager.CanTeleport();
+                chkMapWorldManagerCanFly.Checked = WorldManager.CanFly;
+                chkMapWorldManagerCanTeleport.Checked = WorldManager.CanTeleport();
 
-            // UI
-            chkConversationIsOpen.Checked = Conversation.IsOpen;
-            chkGrandCompanyExchangeIsOpen.Checked = GrandCompanyExchange.Instance.IsOpen;
-            chkGrandCompanySupplyListIsOpen.Checked = GrandCompanySupplyList.Instance.IsOpen;
-            chkJournalAcceptIsOpen.Checked = JournalAccept.IsOpen;
-            chkJournalResultIsOpen.Checked = JournalResult.IsOpen;
-            chkSelectIconStringIsOpen.Checked = SelectIconString.IsOpen;
-            chkSelectStringIsOpen.Checked = SelectString.IsOpen;
-            chkSelectYesnoIsOpen.Checked = SelectYesno.IsOpen;
-            chkShopExchangeItemIsOpen.Checked = ShopExchangeItem.Instance.IsOpen;
-            chkShopProxyIsOpen.Checked = ShopProxy.Instance.IsOpen;
-            chkTalkDialogOpen.Checked = Talk.DialogOpen;
+                // UI
+                chkConversationIsOpen.Checked = Conversation.IsOpen;
+                chkGrandCompanyExchangeIsOpen.Checked = GrandCompanyExchange.Instance.IsOpen;
+                chkGrandCompanySupplyListIsOpen.Checked = GrandCompanySupplyList.Instance.IsOpen;
+                chkJournalAcceptIsOpen.Checked = JournalAccept.IsOpen;
+                chkJournalResultIsOpen.Checked = JournalResult.IsOpen;
+                chkSelectIconStringIsOpen.Checked = SelectIconString.IsOpen;
+                chkSelectStringIsOpen.Checked = SelectString.IsOpen;
+                chkSelectYesnoIsOpen.Checked = SelectYesno.IsOpen;
+                chkShopExchangeItemIsOpen.Checked = ShopExchangeItem.Instance.IsOpen;
+                chkShopProxyIsOpen.Checked = ShopProxy.Instance.IsOpen;
+                chkTalkDialogOpen.Checked = Talk.DialogOpen;
 
-            chkCraftingLogIsOpen.Checked = CraftingLog.IsOpen;
-            chkCraftingManagerIsCrafting.Checked = CraftingManager.IsCrafting;
-            chkSynthesisIsOpen.Checked = Synthesis.IsOpen;
+                chkCraftingLogIsOpen.Checked = CraftingLog.IsOpen;
+                chkCraftingManagerIsCrafting.Checked = CraftingManager.IsCrafting;
+                chkSynthesisIsOpen.Checked = Synthesis.IsOpen;
+            }
+            catch (NullReferenceException)
+            {
+                // Probably just the user teleporting as the UI is refreshing, we can ignore it.
+            }
         }
 
         private void UpdateGameObjects()
