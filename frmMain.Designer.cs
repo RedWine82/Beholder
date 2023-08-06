@@ -93,6 +93,8 @@
             this.txtTargetId = new System.Windows.Forms.TextBox();
             this.lblTargetId = new System.Windows.Forms.Label();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
+            this.btnCopyTargetXYZ = new System.Windows.Forms.Button();
+            this.btnCopyPlayerXYZ = new System.Windows.Forms.Button();
             this.grpPlayer.SuspendLayout();
             this.grpMap.SuspendLayout();
             this.grpGameObjects.SuspendLayout();
@@ -297,6 +299,7 @@
             // 
             // grpMap
             // 
+            this.grpMap.Controls.Add(this.btnCopyPlayerXYZ);
             this.grpMap.Controls.Add(this.btnCopyPlayerVector3);
             this.grpMap.Controls.Add(this.chkCommonBehaviorsIsLoading);
             this.grpMap.Controls.Add(this.txtMapWeather);
@@ -324,11 +327,11 @@
             this.btnCopyPlayerVector3.ForeColor = System.Drawing.Color.Black;
             this.btnCopyPlayerVector3.Image = global::Beholder.Properties.Resources.clipboard;
             this.btnCopyPlayerVector3.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnCopyPlayerVector3.Location = new System.Drawing.Point(8, 136);
+            this.btnCopyPlayerVector3.Location = new System.Drawing.Point(8, 160);
             this.btnCopyPlayerVector3.Name = "btnCopyPlayerVector3";
             this.btnCopyPlayerVector3.Size = new System.Drawing.Size(312, 23);
             this.btnCopyPlayerVector3.TabIndex = 35;
-            this.btnCopyPlayerVector3.Text = "Copy Position Vector3";
+            this.btnCopyPlayerVector3.Text = "Copy Position Vector3 (C#)";
             this.btnCopyPlayerVector3.UseVisualStyleBackColor = true;
             this.btnCopyPlayerVector3.Click += new System.EventHandler(this.btnCopyPlayerVector3_Click);
             // 
@@ -377,7 +380,7 @@
             // chkMapWorldManagerCanTeleport
             // 
             this.chkMapWorldManagerCanTeleport.AutoSize = true;
-            this.chkMapWorldManagerCanTeleport.Location = new System.Drawing.Point(8, 184);
+            this.chkMapWorldManagerCanTeleport.Location = new System.Drawing.Point(8, 208);
             this.chkMapWorldManagerCanTeleport.Name = "chkMapWorldManagerCanTeleport";
             this.chkMapWorldManagerCanTeleport.Size = new System.Drawing.Size(185, 19);
             this.chkMapWorldManagerCanTeleport.TabIndex = 23;
@@ -387,7 +390,7 @@
             // chkMapWorldManagerCanFly
             // 
             this.chkMapWorldManagerCanFly.AutoSize = true;
-            this.chkMapWorldManagerCanFly.Location = new System.Drawing.Point(8, 168);
+            this.chkMapWorldManagerCanFly.Location = new System.Drawing.Point(8, 192);
             this.chkMapWorldManagerCanFly.Name = "chkMapWorldManagerCanFly";
             this.chkMapWorldManagerCanFly.Size = new System.Drawing.Size(153, 19);
             this.chkMapWorldManagerCanFly.TabIndex = 22;
@@ -641,6 +644,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.btnCopyTargetXYZ);
             this.groupBox1.Controls.Add(this.btnCopyTargetNpcObject);
             this.groupBox1.Controls.Add(this.btnCopyTargetVector3);
             this.groupBox1.Controls.Add(this.txtTargetPosition);
@@ -664,11 +668,11 @@
             this.btnCopyTargetNpcObject.ForeColor = System.Drawing.Color.Black;
             this.btnCopyTargetNpcObject.Image = global::Beholder.Properties.Resources.clipboard;
             this.btnCopyTargetNpcObject.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnCopyTargetNpcObject.Location = new System.Drawing.Point(8, 136);
+            this.btnCopyTargetNpcObject.Location = new System.Drawing.Point(8, 160);
             this.btnCopyTargetNpcObject.Name = "btnCopyTargetNpcObject";
             this.btnCopyTargetNpcObject.Size = new System.Drawing.Size(312, 23);
             this.btnCopyTargetNpcObject.TabIndex = 34;
-            this.btnCopyTargetNpcObject.Text = "Copy Target NPC Object";
+            this.btnCopyTargetNpcObject.Text = "Copy Target NPC Object (C#)";
             this.btnCopyTargetNpcObject.UseVisualStyleBackColor = true;
             this.btnCopyTargetNpcObject.Click += new System.EventHandler(this.btnCopyTargetNpcObject_Click);
             // 
@@ -677,11 +681,11 @@
             this.btnCopyTargetVector3.ForeColor = System.Drawing.Color.Black;
             this.btnCopyTargetVector3.Image = global::Beholder.Properties.Resources.clipboard;
             this.btnCopyTargetVector3.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnCopyTargetVector3.Location = new System.Drawing.Point(8, 112);
+            this.btnCopyTargetVector3.Location = new System.Drawing.Point(8, 136);
             this.btnCopyTargetVector3.Name = "btnCopyTargetVector3";
             this.btnCopyTargetVector3.Size = new System.Drawing.Size(312, 23);
             this.btnCopyTargetVector3.TabIndex = 33;
-            this.btnCopyTargetVector3.Text = "Copy Position Vector3";
+            this.btnCopyTargetVector3.Text = "Copy Position Vector3 (C#)";
             this.btnCopyTargetVector3.UseVisualStyleBackColor = true;
             this.btnCopyTargetVector3.Click += new System.EventHandler(this.btnCopyTargetVector3_Click);
             // 
@@ -754,6 +758,32 @@
             this.toolTip.AutomaticDelay = 100;
             this.toolTip.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
             this.toolTip.ToolTipTitle = "Copied to clipboard!";
+            // 
+            // btnCopyTargetXYZ
+            // 
+            this.btnCopyTargetXYZ.ForeColor = System.Drawing.Color.Black;
+            this.btnCopyTargetXYZ.Image = global::Beholder.Properties.Resources.clipboard;
+            this.btnCopyTargetXYZ.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnCopyTargetXYZ.Location = new System.Drawing.Point(8, 112);
+            this.btnCopyTargetXYZ.Name = "btnCopyTargetXYZ";
+            this.btnCopyTargetXYZ.Size = new System.Drawing.Size(312, 23);
+            this.btnCopyTargetXYZ.TabIndex = 35;
+            this.btnCopyTargetXYZ.Text = "Copy Position XYZ (XML)";
+            this.btnCopyTargetXYZ.UseVisualStyleBackColor = true;
+            this.btnCopyTargetXYZ.Click += new System.EventHandler(this.btnCopyTargetXYZ_Click);
+            // 
+            // btnCopyPlayerXYZ
+            // 
+            this.btnCopyPlayerXYZ.ForeColor = System.Drawing.Color.Black;
+            this.btnCopyPlayerXYZ.Image = global::Beholder.Properties.Resources.clipboard;
+            this.btnCopyPlayerXYZ.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnCopyPlayerXYZ.Location = new System.Drawing.Point(8, 136);
+            this.btnCopyPlayerXYZ.Name = "btnCopyPlayerXYZ";
+            this.btnCopyPlayerXYZ.Size = new System.Drawing.Size(312, 23);
+            this.btnCopyPlayerXYZ.TabIndex = 36;
+            this.btnCopyPlayerXYZ.Text = "Copy Position XYZ (XML)";
+            this.btnCopyPlayerXYZ.UseVisualStyleBackColor = true;
+            this.btnCopyPlayerXYZ.Click += new System.EventHandler(this.btnCopyPlayerXYZ_Click);
             // 
             // frmMain
             // 
@@ -856,5 +886,7 @@
         private System.Windows.Forms.Button btnCopyTargetVector3;
         private System.Windows.Forms.ToolTip toolTip;
         private System.Windows.Forms.Button btnCopyPlayerVector3;
+        private System.Windows.Forms.Button btnCopyTargetXYZ;
+        private System.Windows.Forms.Button btnCopyPlayerXYZ;
     }
 }

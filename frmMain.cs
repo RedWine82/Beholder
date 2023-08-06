@@ -51,6 +51,7 @@
 
                 btnCopyTargetVector3.Enabled = GameObjectManager.Target != null && GameObjectManager.Target.NpcId != 0;
                 btnCopyTargetNpcObject.Enabled = GameObjectManager.Target != null && GameObjectManager.Target.NpcId != 0;
+                btnCopyTargetXYZ.Enabled = GameObjectManager.Target != null && GameObjectManager.Target.NpcId != 0;
 
                 chkPlayerIsMounted.Checked = Core.Player.IsMounted;
 
@@ -153,6 +154,11 @@
             toolTip.Show("C# code copied to clipboard!", btnCopyTargetVector3, 2000);
         }
 
+        private string createXYZStringFromPosition(Vector3 position)
+        {
+            return $"XYZ=\"{position.X.ToString("0.00")}, {position.Y.ToString("0.00")}, {position.Z.ToString("0.00")}\"";
+        }
+
         private string createVector3ObjectFromPosition(Vector3 position)
         {
             return $"new Vector3({position.X.ToString("0.00")}f, {position.Y.ToString("0.00")}f, {position.Z.ToString("0.00")}f)";
@@ -187,6 +193,21 @@
         {
             Clipboard.SetText(createVector3ObjectFromPosition(Core.Player.Location));
             toolTip.Show("C# code copied to clipboard!", btnCopyTargetVector3, 2000);
+        }
+
+        private void btnCopyTargetXYZ_Click(object sender, EventArgs e)
+        {
+            if (GameObjectManager.Target == null || GameObjectManager.Target.NpcId == 0)
+                return;
+
+            Clipboard.SetText(createXYZStringFromPosition(GameObjectManager.Target.Location));
+            toolTip.Show("XML code copied to clipboard!", btnCopyTargetXYZ, 2000);
+        }
+
+        private void btnCopyPlayerXYZ_Click(object sender, EventArgs e)
+        {
+            Clipboard.SetText(createXYZStringFromPosition(Core.Player.Location));
+            toolTip.Show("XML code copied to clipboard!", btnCopyPlayerXYZ, 2000);
         }
     }
 }
