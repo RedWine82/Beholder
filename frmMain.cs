@@ -43,11 +43,14 @@
                 txtPlayerId.Text = Core.Player.ObjectId.ToString();
                 txtPlayerName.Text = Core.Player.Name;
 
-                txtPlayerTargetId.Text = GameObjectManager.Target == null ? "NULL" : GameObjectManager.Target.ObjectId.ToString();
-                txtPlayerTargetNpcId.Text = GameObjectManager.Target == null ? "" : GameObjectManager.Target.NpcId.ToString();
-                txtPlayerTargetName.Text = GameObjectManager.Target == null ? "" : GameObjectManager.Target.Name;
+                txtTargetId.Text = GameObjectManager.Target == null ? "NULL" : GameObjectManager.Target.ObjectId.ToString();
+                txtTargetNpcId.Text = GameObjectManager.Target == null ? "" : GameObjectManager.Target.NpcId.ToString();
+                txtTargetName.Text = GameObjectManager.Target == null ? "" : GameObjectManager.Target.Name;
 
-                txtPlayerTargetPos.Text = GameObjectManager.Target == null ? "" : FormatPosition(GameObjectManager.Target.Location);
+                txtTargetPosition.Text = GameObjectManager.Target == null ? "" : FormatPosition(GameObjectManager.Target.Location);
+
+                btnCopyTargetVector3.Enabled = GameObjectManager.Target != null && GameObjectManager.Target.NpcId != 0;
+                btnCopyTargetNpcObject.Enabled = GameObjectManager.Target != null && GameObjectManager.Target.NpcId != 0;
 
                 chkPlayerIsMounted.Checked = Core.Player.IsMounted;
 
@@ -140,5 +143,50 @@
         [DllImport("user32.dll")]
         [return: MarshalAs(UnmanagedType.Bool)]
         public static extern bool SetWindowPos(IntPtr hWnd, IntPtr hWndInsertAfter, int X, int Y, int cx, int cy, uint uFlags);
+
+        private void btnCopyTargetVector3_Click(object sender, EventArgs e)
+        {
+            if (GameObjectManager.Target == null || GameObjectManager.Target.NpcId == 0)
+                return;
+
+            Clipboard.SetText(createVector3ObjectFromPosition(GameObjectManager.Target.Location));
+            toolTip.Show("C# code copied to clipboard!", btnCopyTargetVector3, 2000);
+        }
+
+        private string createVector3ObjectFromPosition(Vector3 position)
+        {
+            return $"new Vector3({position.X.ToString("0.00")}f, {position.Y.ToString("0.00")}f, {position.Z.ToString("0.00")}f)";
+        }
+
+        private string createNpcObjectFromTarget(GameObject target)
+        {
+            return $"new Npc({target.NpcId}, {WorldManager.ZoneId}, {createVector3ObjectFromPosition(target.Location)})";
+        }
+
+        private void btnCopyTargetNpcObject_Click(object sender, EventArgs e)
+        {
+            if (GameObjectManager.Target == null || GameObjectManager.Target.NpcId == 0)
+                return;
+
+            Clipboard.SetText($"{createNpcObjectFromTarget(GameObjectManager.Target)} //{GameObjectManager.Target.Name}, {WorldManager.CurrentZoneName}");
+            toolTip.Show("C# code copied to clipboard!", btnCopyTargetNpcObject, 2000);
+        }
+
+        private void textboxes_CopyValueToClipboard(object sender, EventArgs e)
+        {
+            TextBox textbox = (TextBox)sender;
+
+            if (textbox.Text == string.Empty || textbox.Text == "0" || textbox.Text == "NULL")
+                return;
+
+            Clipboard.SetText(textbox.Text);
+            toolTip.Show("Value copied to clipboard!", textbox, 2000);
+        }
+
+        private void btnCopyPlayerVector3_Click(object sender, EventArgs e)
+        {
+            Clipboard.SetText(createVector3ObjectFromPosition(Core.Player.Location));
+            toolTip.Show("C# code copied to clipboard!", btnCopyTargetVector3, 2000);
+        }
     }
 }

@@ -31,15 +31,9 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
             this.grpPlayer = new System.Windows.Forms.GroupBox();
-            this.txtPlayerTargetPos = new System.Windows.Forms.TextBox();
-            this.lblPlayerTargetPos = new System.Windows.Forms.Label();
-            this.txtPlayerTargetName = new System.Windows.Forms.TextBox();
-            this.lblPlayerTargetName = new System.Windows.Forms.Label();
             this.chkMovementManagerIsOccupied = new System.Windows.Forms.CheckBox();
             this.chkMovementManagerIsMoving = new System.Windows.Forms.CheckBox();
             this.chkPlayerIsCasting = new System.Windows.Forms.CheckBox();
-            this.txtPlayerTargetNpcId = new System.Windows.Forms.TextBox();
-            this.lblPlayerTargetNpcId = new System.Windows.Forms.Label();
             this.lblPlayerMountId = new System.Windows.Forms.Label();
             this.txtPlayerMountId = new System.Windows.Forms.TextBox();
             this.chkPlayerIsMounted = new System.Windows.Forms.CheckBox();
@@ -48,8 +42,6 @@
             this.chkFateManagerWithinFate = new System.Windows.Forms.CheckBox();
             this.chkPlayerIsAlive = new System.Windows.Forms.CheckBox();
             this.chkPlayerInCombat = new System.Windows.Forms.CheckBox();
-            this.txtPlayerTargetId = new System.Windows.Forms.TextBox();
-            this.lblPlayerTargetId = new System.Windows.Forms.Label();
             this.txtPlayerName = new System.Windows.Forms.TextBox();
             this.lblPlayerName = new System.Windows.Forms.Label();
             this.txtPlayerId = new System.Windows.Forms.TextBox();
@@ -59,6 +51,7 @@
             this.chkTalkDialogOpen = new System.Windows.Forms.CheckBox();
             this.tmrUpdate = new System.Windows.Forms.Timer(this.components);
             this.grpMap = new System.Windows.Forms.GroupBox();
+            this.btnCopyPlayerVector3 = new System.Windows.Forms.Button();
             this.chkCommonBehaviorsIsLoading = new System.Windows.Forms.CheckBox();
             this.txtMapWeather = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -88,24 +81,31 @@
             this.chkGrandCompanyExchangeIsOpen = new System.Windows.Forms.CheckBox();
             this.chkShopExchangeItemIsOpen = new System.Windows.Forms.CheckBox();
             this.chkAlwaysOnTop = new System.Windows.Forms.CheckBox();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnCopyTargetNpcObject = new System.Windows.Forms.Button();
+            this.btnCopyTargetVector3 = new System.Windows.Forms.Button();
+            this.txtTargetPosition = new System.Windows.Forms.TextBox();
+            this.lblTargetPosition = new System.Windows.Forms.Label();
+            this.txtTargetName = new System.Windows.Forms.TextBox();
+            this.lblTargetName = new System.Windows.Forms.Label();
+            this.txtTargetNpcId = new System.Windows.Forms.TextBox();
+            this.lblTargetNpcId = new System.Windows.Forms.Label();
+            this.txtTargetId = new System.Windows.Forms.TextBox();
+            this.lblTargetId = new System.Windows.Forms.Label();
+            this.toolTip = new System.Windows.Forms.ToolTip(this.components);
             this.grpPlayer.SuspendLayout();
             this.grpMap.SuspendLayout();
             this.grpGameObjects.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvGameObjects)).BeginInit();
             this.grpUi.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // grpPlayer
             // 
-            this.grpPlayer.Controls.Add(this.txtPlayerTargetPos);
-            this.grpPlayer.Controls.Add(this.lblPlayerTargetPos);
-            this.grpPlayer.Controls.Add(this.txtPlayerTargetName);
-            this.grpPlayer.Controls.Add(this.lblPlayerTargetName);
             this.grpPlayer.Controls.Add(this.chkMovementManagerIsOccupied);
             this.grpPlayer.Controls.Add(this.chkMovementManagerIsMoving);
             this.grpPlayer.Controls.Add(this.chkPlayerIsCasting);
-            this.grpPlayer.Controls.Add(this.txtPlayerTargetNpcId);
-            this.grpPlayer.Controls.Add(this.lblPlayerTargetNpcId);
             this.grpPlayer.Controls.Add(this.lblPlayerMountId);
             this.grpPlayer.Controls.Add(this.txtPlayerMountId);
             this.grpPlayer.Controls.Add(this.chkPlayerIsMounted);
@@ -114,8 +114,6 @@
             this.grpPlayer.Controls.Add(this.chkFateManagerWithinFate);
             this.grpPlayer.Controls.Add(this.chkPlayerIsAlive);
             this.grpPlayer.Controls.Add(this.chkPlayerInCombat);
-            this.grpPlayer.Controls.Add(this.txtPlayerTargetId);
-            this.grpPlayer.Controls.Add(this.lblPlayerTargetId);
             this.grpPlayer.Controls.Add(this.txtPlayerName);
             this.grpPlayer.Controls.Add(this.lblPlayerName);
             this.grpPlayer.Controls.Add(this.txtPlayerId);
@@ -128,40 +126,10 @@
             this.grpPlayer.TabStop = false;
             this.grpPlayer.Text = "Player";
             // 
-            // txtPlayerTargetPos
-            // 
-            this.txtPlayerTargetPos.Location = new System.Drawing.Point(104, 136);
-            this.txtPlayerTargetPos.Name = "txtPlayerTargetPos";
-            this.txtPlayerTargetPos.Size = new System.Drawing.Size(216, 22);
-            this.txtPlayerTargetPos.TabIndex = 32;
-            // 
-            // lblPlayerTargetPos
-            // 
-            this.lblPlayerTargetPos.Location = new System.Drawing.Point(8, 139);
-            this.lblPlayerTargetPos.Name = "lblPlayerTargetPos";
-            this.lblPlayerTargetPos.Size = new System.Drawing.Size(96, 16);
-            this.lblPlayerTargetPos.TabIndex = 29;
-            this.lblPlayerTargetPos.Text = "Target Pos.";
-            // 
-            // txtPlayerTargetName
-            // 
-            this.txtPlayerTargetName.Location = new System.Drawing.Point(104, 112);
-            this.txtPlayerTargetName.Name = "txtPlayerTargetName";
-            this.txtPlayerTargetName.Size = new System.Drawing.Size(216, 22);
-            this.txtPlayerTargetName.TabIndex = 28;
-            // 
-            // lblPlayerTargetName
-            // 
-            this.lblPlayerTargetName.Location = new System.Drawing.Point(8, 115);
-            this.lblPlayerTargetName.Name = "lblPlayerTargetName";
-            this.lblPlayerTargetName.Size = new System.Drawing.Size(96, 16);
-            this.lblPlayerTargetName.TabIndex = 27;
-            this.lblPlayerTargetName.Text = "Target Name";
-            // 
             // chkMovementManagerIsOccupied
             // 
             this.chkMovementManagerIsOccupied.AutoSize = true;
-            this.chkMovementManagerIsOccupied.Location = new System.Drawing.Point(8, 249);
+            this.chkMovementManagerIsOccupied.Location = new System.Drawing.Point(8, 161);
             this.chkMovementManagerIsOccupied.Name = "chkMovementManagerIsOccupied";
             this.chkMovementManagerIsOccupied.Size = new System.Drawing.Size(208, 19);
             this.chkMovementManagerIsOccupied.TabIndex = 26;
@@ -171,7 +139,7 @@
             // chkMovementManagerIsMoving
             // 
             this.chkMovementManagerIsMoving.AutoSize = true;
-            this.chkMovementManagerIsMoving.Location = new System.Drawing.Point(8, 233);
+            this.chkMovementManagerIsMoving.Location = new System.Drawing.Point(8, 145);
             this.chkMovementManagerIsMoving.Name = "chkMovementManagerIsMoving";
             this.chkMovementManagerIsMoving.Size = new System.Drawing.Size(196, 19);
             this.chkMovementManagerIsMoving.TabIndex = 25;
@@ -181,31 +149,16 @@
             // chkPlayerIsCasting
             // 
             this.chkPlayerIsCasting.AutoSize = true;
-            this.chkPlayerIsCasting.Location = new System.Drawing.Point(8, 216);
+            this.chkPlayerIsCasting.Location = new System.Drawing.Point(8, 128);
             this.chkPlayerIsCasting.Name = "chkPlayerIsCasting";
             this.chkPlayerIsCasting.Size = new System.Drawing.Size(116, 19);
             this.chkPlayerIsCasting.TabIndex = 24;
             this.chkPlayerIsCasting.Text = "Player.IsCasting";
             this.chkPlayerIsCasting.UseVisualStyleBackColor = true;
             // 
-            // txtPlayerTargetNpcId
-            // 
-            this.txtPlayerTargetNpcId.Location = new System.Drawing.Point(104, 88);
-            this.txtPlayerTargetNpcId.Name = "txtPlayerTargetNpcId";
-            this.txtPlayerTargetNpcId.Size = new System.Drawing.Size(216, 22);
-            this.txtPlayerTargetNpcId.TabIndex = 23;
-            // 
-            // lblPlayerTargetNpcId
-            // 
-            this.lblPlayerTargetNpcId.Location = new System.Drawing.Point(8, 91);
-            this.lblPlayerTargetNpcId.Name = "lblPlayerTargetNpcId";
-            this.lblPlayerTargetNpcId.Size = new System.Drawing.Size(96, 16);
-            this.lblPlayerTargetNpcId.TabIndex = 22;
-            this.lblPlayerTargetNpcId.Text = "Target NPC ID";
-            // 
             // lblPlayerMountId
             // 
-            this.lblPlayerMountId.Location = new System.Drawing.Point(184, 163);
+            this.lblPlayerMountId.Location = new System.Drawing.Point(184, 75);
             this.lblPlayerMountId.Name = "lblPlayerMountId";
             this.lblPlayerMountId.Size = new System.Drawing.Size(72, 16);
             this.lblPlayerMountId.TabIndex = 21;
@@ -213,15 +166,16 @@
             // 
             // txtPlayerMountId
             // 
-            this.txtPlayerMountId.Location = new System.Drawing.Point(260, 160);
+            this.txtPlayerMountId.Location = new System.Drawing.Point(260, 72);
             this.txtPlayerMountId.Name = "txtPlayerMountId";
             this.txtPlayerMountId.Size = new System.Drawing.Size(60, 22);
             this.txtPlayerMountId.TabIndex = 20;
+            this.txtPlayerMountId.Click += new System.EventHandler(this.textboxes_CopyValueToClipboard);
             // 
             // chkPlayerIsMounted
             // 
             this.chkPlayerIsMounted.AutoSize = true;
-            this.chkPlayerIsMounted.Location = new System.Drawing.Point(8, 162);
+            this.chkPlayerIsMounted.Location = new System.Drawing.Point(8, 74);
             this.chkPlayerIsMounted.Name = "chkPlayerIsMounted";
             this.chkPlayerIsMounted.Size = new System.Drawing.Size(125, 19);
             this.chkPlayerIsMounted.TabIndex = 19;
@@ -231,7 +185,7 @@
             // chkDutyManagerInInstance
             // 
             this.chkDutyManagerInInstance.AutoSize = true;
-            this.chkDutyManagerInInstance.Location = new System.Drawing.Point(144, 200);
+            this.chkDutyManagerInInstance.Location = new System.Drawing.Point(144, 112);
             this.chkDutyManagerInInstance.Name = "chkDutyManagerInInstance";
             this.chkDutyManagerInInstance.Size = new System.Drawing.Size(167, 19);
             this.chkDutyManagerInInstance.TabIndex = 18;
@@ -241,7 +195,7 @@
             // chkDutyManagerDutyReady
             // 
             this.chkDutyManagerDutyReady.AutoSize = true;
-            this.chkDutyManagerDutyReady.Location = new System.Drawing.Point(144, 216);
+            this.chkDutyManagerDutyReady.Location = new System.Drawing.Point(144, 128);
             this.chkDutyManagerDutyReady.Name = "chkDutyManagerDutyReady";
             this.chkDutyManagerDutyReady.Size = new System.Drawing.Size(173, 19);
             this.chkDutyManagerDutyReady.TabIndex = 17;
@@ -251,7 +205,7 @@
             // chkFateManagerWithinFate
             // 
             this.chkFateManagerWithinFate.AutoSize = true;
-            this.chkFateManagerWithinFate.Location = new System.Drawing.Point(144, 184);
+            this.chkFateManagerWithinFate.Location = new System.Drawing.Point(144, 96);
             this.chkFateManagerWithinFate.Name = "chkFateManagerWithinFate";
             this.chkFateManagerWithinFate.Size = new System.Drawing.Size(168, 19);
             this.chkFateManagerWithinFate.TabIndex = 13;
@@ -261,7 +215,7 @@
             // chkPlayerIsAlive
             // 
             this.chkPlayerIsAlive.AutoSize = true;
-            this.chkPlayerIsAlive.Location = new System.Drawing.Point(8, 200);
+            this.chkPlayerIsAlive.Location = new System.Drawing.Point(8, 112);
             this.chkPlayerIsAlive.Name = "chkPlayerIsAlive";
             this.chkPlayerIsAlive.Size = new System.Drawing.Size(101, 19);
             this.chkPlayerIsAlive.TabIndex = 11;
@@ -271,27 +225,12 @@
             // chkPlayerInCombat
             // 
             this.chkPlayerInCombat.AutoSize = true;
-            this.chkPlayerInCombat.Location = new System.Drawing.Point(8, 184);
+            this.chkPlayerInCombat.Location = new System.Drawing.Point(8, 96);
             this.chkPlayerInCombat.Name = "chkPlayerInCombat";
             this.chkPlayerInCombat.Size = new System.Drawing.Size(120, 19);
             this.chkPlayerInCombat.TabIndex = 10;
             this.chkPlayerInCombat.Text = "Player.InCombat";
             this.chkPlayerInCombat.UseVisualStyleBackColor = true;
-            // 
-            // txtPlayerTargetId
-            // 
-            this.txtPlayerTargetId.Location = new System.Drawing.Point(104, 64);
-            this.txtPlayerTargetId.Name = "txtPlayerTargetId";
-            this.txtPlayerTargetId.Size = new System.Drawing.Size(216, 22);
-            this.txtPlayerTargetId.TabIndex = 5;
-            // 
-            // lblPlayerTargetId
-            // 
-            this.lblPlayerTargetId.Location = new System.Drawing.Point(8, 67);
-            this.lblPlayerTargetId.Name = "lblPlayerTargetId";
-            this.lblPlayerTargetId.Size = new System.Drawing.Size(96, 16);
-            this.lblPlayerTargetId.TabIndex = 4;
-            this.lblPlayerTargetId.Text = "Target ID";
             // 
             // txtPlayerName
             // 
@@ -299,6 +238,7 @@
             this.txtPlayerName.Name = "txtPlayerName";
             this.txtPlayerName.Size = new System.Drawing.Size(216, 22);
             this.txtPlayerName.TabIndex = 3;
+            this.txtPlayerName.Click += new System.EventHandler(this.textboxes_CopyValueToClipboard);
             // 
             // lblPlayerName
             // 
@@ -314,6 +254,7 @@
             this.txtPlayerId.Name = "txtPlayerId";
             this.txtPlayerId.Size = new System.Drawing.Size(216, 22);
             this.txtPlayerId.TabIndex = 1;
+            this.txtPlayerId.Click += new System.EventHandler(this.textboxes_CopyValueToClipboard);
             // 
             // lblPlayerId
             // 
@@ -329,6 +270,7 @@
             this.txtMapPlayerPosition.Name = "txtMapPlayerPosition";
             this.txtMapPlayerPosition.Size = new System.Drawing.Size(216, 22);
             this.txtMapPlayerPosition.TabIndex = 9;
+            this.txtMapPlayerPosition.Click += new System.EventHandler(this.textboxes_CopyValueToClipboard);
             // 
             // lblMapPlayerPosition
             // 
@@ -355,6 +297,7 @@
             // 
             // grpMap
             // 
+            this.grpMap.Controls.Add(this.btnCopyPlayerVector3);
             this.grpMap.Controls.Add(this.chkCommonBehaviorsIsLoading);
             this.grpMap.Controls.Add(this.txtMapWeather);
             this.grpMap.Controls.Add(this.label1);
@@ -369,12 +312,25 @@
             this.grpMap.Controls.Add(this.txtMapPlayerPosition);
             this.grpMap.Controls.Add(this.lblMapPlayerPosition);
             this.grpMap.ForeColor = System.Drawing.Color.White;
-            this.grpMap.Location = new System.Drawing.Point(344, 32);
+            this.grpMap.Location = new System.Drawing.Point(680, 32);
             this.grpMap.Name = "grpMap";
             this.grpMap.Size = new System.Drawing.Size(328, 272);
             this.grpMap.TabIndex = 22;
             this.grpMap.TabStop = false;
             this.grpMap.Text = "Map";
+            // 
+            // btnCopyPlayerVector3
+            // 
+            this.btnCopyPlayerVector3.ForeColor = System.Drawing.Color.Black;
+            this.btnCopyPlayerVector3.Image = global::Beholder.Properties.Resources.clipboard;
+            this.btnCopyPlayerVector3.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnCopyPlayerVector3.Location = new System.Drawing.Point(8, 136);
+            this.btnCopyPlayerVector3.Name = "btnCopyPlayerVector3";
+            this.btnCopyPlayerVector3.Size = new System.Drawing.Size(312, 23);
+            this.btnCopyPlayerVector3.TabIndex = 35;
+            this.btnCopyPlayerVector3.Text = "Copy Position Vector3";
+            this.btnCopyPlayerVector3.UseVisualStyleBackColor = true;
+            this.btnCopyPlayerVector3.Click += new System.EventHandler(this.btnCopyPlayerVector3_Click);
             // 
             // chkCommonBehaviorsIsLoading
             // 
@@ -392,6 +348,7 @@
             this.txtMapWeather.Name = "txtMapWeather";
             this.txtMapWeather.Size = new System.Drawing.Size(216, 22);
             this.txtMapWeather.TabIndex = 27;
+            this.txtMapWeather.Click += new System.EventHandler(this.textboxes_CopyValueToClipboard);
             // 
             // label1
             // 
@@ -407,6 +364,7 @@
             this.txtMapWeatherId.Name = "txtMapWeatherId";
             this.txtMapWeatherId.Size = new System.Drawing.Size(216, 22);
             this.txtMapWeatherId.TabIndex = 25;
+            this.txtMapWeatherId.Click += new System.EventHandler(this.textboxes_CopyValueToClipboard);
             // 
             // label2
             // 
@@ -419,7 +377,7 @@
             // chkMapWorldManagerCanTeleport
             // 
             this.chkMapWorldManagerCanTeleport.AutoSize = true;
-            this.chkMapWorldManagerCanTeleport.Location = new System.Drawing.Point(8, 160);
+            this.chkMapWorldManagerCanTeleport.Location = new System.Drawing.Point(8, 184);
             this.chkMapWorldManagerCanTeleport.Name = "chkMapWorldManagerCanTeleport";
             this.chkMapWorldManagerCanTeleport.Size = new System.Drawing.Size(185, 19);
             this.chkMapWorldManagerCanTeleport.TabIndex = 23;
@@ -429,7 +387,7 @@
             // chkMapWorldManagerCanFly
             // 
             this.chkMapWorldManagerCanFly.AutoSize = true;
-            this.chkMapWorldManagerCanFly.Location = new System.Drawing.Point(8, 144);
+            this.chkMapWorldManagerCanFly.Location = new System.Drawing.Point(8, 168);
             this.chkMapWorldManagerCanFly.Name = "chkMapWorldManagerCanFly";
             this.chkMapWorldManagerCanFly.Size = new System.Drawing.Size(153, 19);
             this.chkMapWorldManagerCanFly.TabIndex = 22;
@@ -442,6 +400,7 @@
             this.txtMapName.Name = "txtMapName";
             this.txtMapName.Size = new System.Drawing.Size(216, 22);
             this.txtMapName.TabIndex = 3;
+            this.txtMapName.Click += new System.EventHandler(this.textboxes_CopyValueToClipboard);
             // 
             // lblMapName
             // 
@@ -457,6 +416,7 @@
             this.txtMapId.Name = "txtMapId";
             this.txtMapId.Size = new System.Drawing.Size(216, 22);
             this.txtMapId.TabIndex = 1;
+            this.txtMapId.Click += new System.EventHandler(this.textboxes_CopyValueToClipboard);
             // 
             // lblMapId
             // 
@@ -474,7 +434,7 @@
             this.lblDisclaimer.ForeColor = System.Drawing.Color.Salmon;
             this.lblDisclaimer.Location = new System.Drawing.Point(224, 8);
             this.lblDisclaimer.Name = "lblDisclaimer";
-            this.lblDisclaimer.Size = new System.Drawing.Size(632, 16);
+            this.lblDisclaimer.Size = new System.Drawing.Size(880, 16);
             this.lblDisclaimer.TabIndex = 23;
             this.lblDisclaimer.Text = "This plugin is for developers only and is provided AS-IS with no support.";
             this.lblDisclaimer.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -488,7 +448,7 @@
             this.grpGameObjects.ForeColor = System.Drawing.Color.White;
             this.grpGameObjects.Location = new System.Drawing.Point(8, 320);
             this.grpGameObjects.Name = "grpGameObjects";
-            this.grpGameObjects.Size = new System.Drawing.Size(1008, 355);
+            this.grpGameObjects.Size = new System.Drawing.Size(1256, 501);
             this.grpGameObjects.TabIndex = 24;
             this.grpGameObjects.TabStop = false;
             this.grpGameObjects.Text = "Game Objects (Does not update automatically, close window and reopen to update)";
@@ -508,7 +468,7 @@
             this.dgvGameObjects.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.Black;
             this.dgvGameObjects.RowTemplate.DefaultCellStyle.SelectionBackColor = System.Drawing.Color.RoyalBlue;
             this.dgvGameObjects.RowTemplate.DefaultCellStyle.SelectionForeColor = System.Drawing.Color.White;
-            this.dgvGameObjects.Size = new System.Drawing.Size(992, 323);
+            this.dgvGameObjects.Size = new System.Drawing.Size(1240, 469);
             this.dgvGameObjects.TabIndex = 25;
             this.dgvGameObjects.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.dgvGameObjects_DataError);
             // 
@@ -529,9 +489,9 @@
             this.grpUi.Controls.Add(this.chkShopExchangeItemIsOpen);
             this.grpUi.Controls.Add(this.chkTalkDialogOpen);
             this.grpUi.ForeColor = System.Drawing.Color.White;
-            this.grpUi.Location = new System.Drawing.Point(680, 32);
+            this.grpUi.Location = new System.Drawing.Point(1016, 32);
             this.grpUi.Name = "grpUi";
-            this.grpUi.Size = new System.Drawing.Size(328, 272);
+            this.grpUi.Size = new System.Drawing.Size(248, 272);
             this.grpUi.TabIndex = 28;
             this.grpUi.TabStop = false;
             this.grpUi.Text = "UI";
@@ -671,7 +631,7 @@
             this.chkAlwaysOnTop.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.chkAlwaysOnTop.AutoSize = true;
             this.chkAlwaysOnTop.ForeColor = System.Drawing.Color.White;
-            this.chkAlwaysOnTop.Location = new System.Drawing.Point(896, 8);
+            this.chkAlwaysOnTop.Location = new System.Drawing.Point(1144, 8);
             this.chkAlwaysOnTop.Name = "chkAlwaysOnTop";
             this.chkAlwaysOnTop.Size = new System.Drawing.Size(113, 19);
             this.chkAlwaysOnTop.TabIndex = 29;
@@ -679,12 +639,129 @@
             this.chkAlwaysOnTop.UseVisualStyleBackColor = true;
             this.chkAlwaysOnTop.CheckedChanged += new System.EventHandler(this.chkAlwaysOnTop_CheckedChanged);
             // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.btnCopyTargetNpcObject);
+            this.groupBox1.Controls.Add(this.btnCopyTargetVector3);
+            this.groupBox1.Controls.Add(this.txtTargetPosition);
+            this.groupBox1.Controls.Add(this.lblTargetPosition);
+            this.groupBox1.Controls.Add(this.txtTargetName);
+            this.groupBox1.Controls.Add(this.lblTargetName);
+            this.groupBox1.Controls.Add(this.txtTargetNpcId);
+            this.groupBox1.Controls.Add(this.lblTargetNpcId);
+            this.groupBox1.Controls.Add(this.txtTargetId);
+            this.groupBox1.Controls.Add(this.lblTargetId);
+            this.groupBox1.ForeColor = System.Drawing.Color.White;
+            this.groupBox1.Location = new System.Drawing.Point(344, 32);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(328, 272);
+            this.groupBox1.TabIndex = 33;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Target";
+            // 
+            // btnCopyTargetNpcObject
+            // 
+            this.btnCopyTargetNpcObject.ForeColor = System.Drawing.Color.Black;
+            this.btnCopyTargetNpcObject.Image = global::Beholder.Properties.Resources.clipboard;
+            this.btnCopyTargetNpcObject.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnCopyTargetNpcObject.Location = new System.Drawing.Point(8, 136);
+            this.btnCopyTargetNpcObject.Name = "btnCopyTargetNpcObject";
+            this.btnCopyTargetNpcObject.Size = new System.Drawing.Size(312, 23);
+            this.btnCopyTargetNpcObject.TabIndex = 34;
+            this.btnCopyTargetNpcObject.Text = "Copy Target NPC Object";
+            this.btnCopyTargetNpcObject.UseVisualStyleBackColor = true;
+            this.btnCopyTargetNpcObject.Click += new System.EventHandler(this.btnCopyTargetNpcObject_Click);
+            // 
+            // btnCopyTargetVector3
+            // 
+            this.btnCopyTargetVector3.ForeColor = System.Drawing.Color.Black;
+            this.btnCopyTargetVector3.Image = global::Beholder.Properties.Resources.clipboard;
+            this.btnCopyTargetVector3.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnCopyTargetVector3.Location = new System.Drawing.Point(8, 112);
+            this.btnCopyTargetVector3.Name = "btnCopyTargetVector3";
+            this.btnCopyTargetVector3.Size = new System.Drawing.Size(312, 23);
+            this.btnCopyTargetVector3.TabIndex = 33;
+            this.btnCopyTargetVector3.Text = "Copy Position Vector3";
+            this.btnCopyTargetVector3.UseVisualStyleBackColor = true;
+            this.btnCopyTargetVector3.Click += new System.EventHandler(this.btnCopyTargetVector3_Click);
+            // 
+            // txtTargetPosition
+            // 
+            this.txtTargetPosition.Location = new System.Drawing.Point(104, 88);
+            this.txtTargetPosition.Name = "txtTargetPosition";
+            this.txtTargetPosition.Size = new System.Drawing.Size(216, 22);
+            this.txtTargetPosition.TabIndex = 32;
+            this.txtTargetPosition.Click += new System.EventHandler(this.textboxes_CopyValueToClipboard);
+            // 
+            // lblTargetPosition
+            // 
+            this.lblTargetPosition.Location = new System.Drawing.Point(8, 91);
+            this.lblTargetPosition.Name = "lblTargetPosition";
+            this.lblTargetPosition.Size = new System.Drawing.Size(96, 16);
+            this.lblTargetPosition.TabIndex = 29;
+            this.lblTargetPosition.Text = "Position";
+            // 
+            // txtTargetName
+            // 
+            this.txtTargetName.Location = new System.Drawing.Point(104, 64);
+            this.txtTargetName.Name = "txtTargetName";
+            this.txtTargetName.Size = new System.Drawing.Size(216, 22);
+            this.txtTargetName.TabIndex = 28;
+            this.txtTargetName.Click += new System.EventHandler(this.textboxes_CopyValueToClipboard);
+            // 
+            // lblTargetName
+            // 
+            this.lblTargetName.Location = new System.Drawing.Point(8, 67);
+            this.lblTargetName.Name = "lblTargetName";
+            this.lblTargetName.Size = new System.Drawing.Size(96, 16);
+            this.lblTargetName.TabIndex = 27;
+            this.lblTargetName.Text = "Name";
+            // 
+            // txtTargetNpcId
+            // 
+            this.txtTargetNpcId.Location = new System.Drawing.Point(104, 40);
+            this.txtTargetNpcId.Name = "txtTargetNpcId";
+            this.txtTargetNpcId.Size = new System.Drawing.Size(216, 22);
+            this.txtTargetNpcId.TabIndex = 23;
+            this.txtTargetNpcId.Click += new System.EventHandler(this.textboxes_CopyValueToClipboard);
+            // 
+            // lblTargetNpcId
+            // 
+            this.lblTargetNpcId.Location = new System.Drawing.Point(8, 43);
+            this.lblTargetNpcId.Name = "lblTargetNpcId";
+            this.lblTargetNpcId.Size = new System.Drawing.Size(96, 16);
+            this.lblTargetNpcId.TabIndex = 22;
+            this.lblTargetNpcId.Text = "NPC ID";
+            // 
+            // txtTargetId
+            // 
+            this.txtTargetId.Location = new System.Drawing.Point(104, 16);
+            this.txtTargetId.Name = "txtTargetId";
+            this.txtTargetId.Size = new System.Drawing.Size(216, 22);
+            this.txtTargetId.TabIndex = 5;
+            this.txtTargetId.Click += new System.EventHandler(this.textboxes_CopyValueToClipboard);
+            // 
+            // lblTargetId
+            // 
+            this.lblTargetId.Location = new System.Drawing.Point(8, 19);
+            this.lblTargetId.Name = "lblTargetId";
+            this.lblTargetId.Size = new System.Drawing.Size(96, 16);
+            this.lblTargetId.TabIndex = 4;
+            this.lblTargetId.Text = "ID";
+            // 
+            // toolTip
+            // 
+            this.toolTip.AutomaticDelay = 0;
+            this.toolTip.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
+            this.toolTip.ToolTipTitle = "Copied to clipboard!";
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.ClientSize = new System.Drawing.Size(1023, 683);
+            this.ClientSize = new System.Drawing.Size(1271, 829);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.chkAlwaysOnTop);
             this.Controls.Add(this.grpUi);
             this.Controls.Add(this.grpGameObjects);
@@ -707,6 +784,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvGameObjects)).EndInit();
             this.grpUi.ResumeLayout(false);
             this.grpUi.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -720,8 +799,6 @@
         private System.Windows.Forms.TextBox txtPlayerId;
         private System.Windows.Forms.Label lblPlayerId;
         private System.Windows.Forms.Timer tmrUpdate;
-        private System.Windows.Forms.TextBox txtPlayerTargetId;
-        private System.Windows.Forms.Label lblPlayerTargetId;
         private System.Windows.Forms.Label lblMapPlayerPosition;
         private System.Windows.Forms.TextBox txtMapPlayerPosition;
         private System.Windows.Forms.CheckBox chkPlayerIsAlive;
@@ -747,8 +824,6 @@
         private System.Windows.Forms.Label lblDisclaimer;
         private System.Windows.Forms.GroupBox grpGameObjects;
         private System.Windows.Forms.DataGridView dgvGameObjects;
-        private System.Windows.Forms.TextBox txtPlayerTargetNpcId;
-        private System.Windows.Forms.Label lblPlayerTargetNpcId;
         private System.Windows.Forms.CheckBox chkPlayerIsCasting;
         private System.Windows.Forms.GroupBox grpUi;
         private System.Windows.Forms.CheckBox chkMovementManagerIsOccupied;
@@ -767,10 +842,19 @@
         private System.Windows.Forms.CheckBox chkJournalAcceptIsOpen;
         private System.Windows.Forms.CheckBox chkJournalResultIsOpen;
         private System.Windows.Forms.CheckBox chkShopProxyIsOpen;
-        private System.Windows.Forms.TextBox txtPlayerTargetName;
-        private System.Windows.Forms.Label lblPlayerTargetName;
-        private System.Windows.Forms.TextBox txtPlayerTargetPos;
-        private System.Windows.Forms.Label lblPlayerTargetPos;
         private System.Windows.Forms.CheckBox chkAlwaysOnTop;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.TextBox txtTargetPosition;
+        private System.Windows.Forms.Label lblTargetPosition;
+        private System.Windows.Forms.TextBox txtTargetName;
+        private System.Windows.Forms.Label lblTargetName;
+        private System.Windows.Forms.TextBox txtTargetNpcId;
+        private System.Windows.Forms.Label lblTargetNpcId;
+        private System.Windows.Forms.TextBox txtTargetId;
+        private System.Windows.Forms.Label lblTargetId;
+        private System.Windows.Forms.Button btnCopyTargetNpcObject;
+        private System.Windows.Forms.Button btnCopyTargetVector3;
+        private System.Windows.Forms.ToolTip toolTip;
+        private System.Windows.Forms.Button btnCopyPlayerVector3;
     }
 }

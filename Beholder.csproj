@@ -121,6 +121,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="beholder.ico" />
+    <None Include="clipboard.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
