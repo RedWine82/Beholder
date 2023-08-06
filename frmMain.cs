@@ -168,7 +168,7 @@
             if (GameObjectManager.Target == null || GameObjectManager.Target.NpcId == 0)
                 return;
 
-            Clipboard.SetText($"{createNpcObjectFromTarget(GameObjectManager.Target)} //{GameObjectManager.Target.Name}, {WorldManager.CurrentZoneName}");
+            Clipboard.SetText($"{createNpcObjectFromTarget(GameObjectManager.Target)} // {GameObjectManager.Target.Name}, {WorldManager.CurrentZoneName}");
             toolTip.Show("C# code copied to clipboard!", btnCopyTargetNpcObject, 2000);
         }
 
