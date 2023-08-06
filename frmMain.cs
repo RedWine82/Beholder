@@ -30,15 +30,15 @@
 
         private void UpdateData()
         {
-            chkCommonBehaviorsIsLoading.Checked = CommonBehaviors.IsLoading;
-
-            Pulsator.Pulse(PulseFlags.All);
-
-            if (Core.Player == null)
-                return;
-
             try
             {
+                Pulsator.Pulse(PulseFlags.All);
+
+                chkCommonBehaviorsIsLoading.Checked = CommonBehaviors.IsLoading;
+
+                if (Core.Player == null)
+                    return;
+
                 // Player
                 txtPlayerId.Text = Core.Player.ObjectId.ToString();
                 txtPlayerName.Text = Core.Player.Name;
