@@ -751,7 +751,7 @@
             // 
             // toolTip
             // 
-            this.toolTip.AutomaticDelay = 0;
+            this.toolTip.AutomaticDelay = 100;
             this.toolTip.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
             this.toolTip.ToolTipTitle = "Copied to clipboard!";
             // 
