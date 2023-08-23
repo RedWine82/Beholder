@@ -54,6 +54,11 @@
                 btnCopyTargetXYZ.Enabled = GameObjectManager.Target != null && GameObjectManager.Target.NpcId != 0;
 
                 chkPlayerIsMounted.Checked = Core.Player.IsMounted;
+                txtPlayerMountId.Text = LocalPlayerExtensions.CurrentMount(Core.Player).ToString();
+
+                chkPlayerIsFishing.Checked = Core.Player.IsFishing();
+                chkPlayerIsOnFishingBoat.Checked = Core.Player.IsOnFishingBoat();
+                txtPlayerFishingState.Text = FishingManager.State.ToString();
 
                 chkPlayerInCombat.Checked = Core.Player.InCombat;
                 chkPlayerIsAlive.Checked = Core.Player.IsAlive;
@@ -62,8 +67,6 @@
                 chkDutyManagerDutyReady.Checked = DutyManager.DutyReady;
                 chkDutyManagerInInstance.Checked = DutyManager.InInstance;
                 chkFateManagerWithinFate.Checked = FateManager.WithinFate;
-
-                txtPlayerMountId.Text = LocalPlayerExtensions.CurrentMount(Core.Player).ToString();
 
                 chkMovementManagerIsMoving.Checked = MovementManager.IsMoving;
                 chkMovementManagerIsOccupied.Checked = MovementManager.IsOccupied;

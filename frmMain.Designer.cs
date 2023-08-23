@@ -31,6 +31,8 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
             this.grpPlayer = new System.Windows.Forms.GroupBox();
+            this.lblPlayerFishingState = new System.Windows.Forms.Label();
+            this.txtPlayerFishingState = new System.Windows.Forms.TextBox();
             this.chkMovementManagerIsOccupied = new System.Windows.Forms.CheckBox();
             this.chkMovementManagerIsMoving = new System.Windows.Forms.CheckBox();
             this.chkPlayerIsCasting = new System.Windows.Forms.CheckBox();
@@ -51,6 +53,7 @@
             this.chkTalkDialogOpen = new System.Windows.Forms.CheckBox();
             this.tmrUpdate = new System.Windows.Forms.Timer(this.components);
             this.grpMap = new System.Windows.Forms.GroupBox();
+            this.btnCopyPlayerXYZ = new System.Windows.Forms.Button();
             this.btnCopyPlayerVector3 = new System.Windows.Forms.Button();
             this.chkCommonBehaviorsIsLoading = new System.Windows.Forms.CheckBox();
             this.txtMapWeather = new System.Windows.Forms.TextBox();
@@ -82,6 +85,7 @@
             this.chkShopExchangeItemIsOpen = new System.Windows.Forms.CheckBox();
             this.chkAlwaysOnTop = new System.Windows.Forms.CheckBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnCopyTargetXYZ = new System.Windows.Forms.Button();
             this.btnCopyTargetNpcObject = new System.Windows.Forms.Button();
             this.btnCopyTargetVector3 = new System.Windows.Forms.Button();
             this.txtTargetPosition = new System.Windows.Forms.TextBox();
@@ -93,8 +97,9 @@
             this.txtTargetId = new System.Windows.Forms.TextBox();
             this.lblTargetId = new System.Windows.Forms.Label();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
-            this.btnCopyTargetXYZ = new System.Windows.Forms.Button();
-            this.btnCopyPlayerXYZ = new System.Windows.Forms.Button();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.chkPlayerIsFishing = new System.Windows.Forms.CheckBox();
+            this.chkPlayerIsOnFishingBoat = new System.Windows.Forms.CheckBox();
             this.grpPlayer.SuspendLayout();
             this.grpMap.SuspendLayout();
             this.grpGameObjects.SuspendLayout();
@@ -105,6 +110,11 @@
             // 
             // grpPlayer
             // 
+            this.grpPlayer.Controls.Add(this.chkPlayerIsOnFishingBoat);
+            this.grpPlayer.Controls.Add(this.chkPlayerIsFishing);
+            this.grpPlayer.Controls.Add(this.checkBox1);
+            this.grpPlayer.Controls.Add(this.lblPlayerFishingState);
+            this.grpPlayer.Controls.Add(this.txtPlayerFishingState);
             this.grpPlayer.Controls.Add(this.chkMovementManagerIsOccupied);
             this.grpPlayer.Controls.Add(this.chkMovementManagerIsMoving);
             this.grpPlayer.Controls.Add(this.chkPlayerIsCasting);
@@ -128,10 +138,25 @@
             this.grpPlayer.TabStop = false;
             this.grpPlayer.Text = "Player";
             // 
+            // lblPlayerFishingState
+            // 
+            this.lblPlayerFishingState.Location = new System.Drawing.Point(168, 97);
+            this.lblPlayerFishingState.Name = "lblPlayerFishingState";
+            this.lblPlayerFishingState.Size = new System.Drawing.Size(88, 16);
+            this.lblPlayerFishingState.TabIndex = 28;
+            this.lblPlayerFishingState.Text = "Fishing State";
+            // 
+            // txtPlayerFishingState
+            // 
+            this.txtPlayerFishingState.Location = new System.Drawing.Point(260, 94);
+            this.txtPlayerFishingState.Name = "txtPlayerFishingState";
+            this.txtPlayerFishingState.Size = new System.Drawing.Size(60, 22);
+            this.txtPlayerFishingState.TabIndex = 27;
+            // 
             // chkMovementManagerIsOccupied
             // 
             this.chkMovementManagerIsOccupied.AutoSize = true;
-            this.chkMovementManagerIsOccupied.Location = new System.Drawing.Point(8, 161);
+            this.chkMovementManagerIsOccupied.Location = new System.Drawing.Point(8, 216);
             this.chkMovementManagerIsOccupied.Name = "chkMovementManagerIsOccupied";
             this.chkMovementManagerIsOccupied.Size = new System.Drawing.Size(208, 19);
             this.chkMovementManagerIsOccupied.TabIndex = 26;
@@ -141,7 +166,7 @@
             // chkMovementManagerIsMoving
             // 
             this.chkMovementManagerIsMoving.AutoSize = true;
-            this.chkMovementManagerIsMoving.Location = new System.Drawing.Point(8, 145);
+            this.chkMovementManagerIsMoving.Location = new System.Drawing.Point(8, 200);
             this.chkMovementManagerIsMoving.Name = "chkMovementManagerIsMoving";
             this.chkMovementManagerIsMoving.Size = new System.Drawing.Size(196, 19);
             this.chkMovementManagerIsMoving.TabIndex = 25;
@@ -151,7 +176,7 @@
             // chkPlayerIsCasting
             // 
             this.chkPlayerIsCasting.AutoSize = true;
-            this.chkPlayerIsCasting.Location = new System.Drawing.Point(8, 128);
+            this.chkPlayerIsCasting.Location = new System.Drawing.Point(8, 167);
             this.chkPlayerIsCasting.Name = "chkPlayerIsCasting";
             this.chkPlayerIsCasting.Size = new System.Drawing.Size(116, 19);
             this.chkPlayerIsCasting.TabIndex = 24;
@@ -160,7 +185,7 @@
             // 
             // lblPlayerMountId
             // 
-            this.lblPlayerMountId.Location = new System.Drawing.Point(184, 75);
+            this.lblPlayerMountId.Location = new System.Drawing.Point(168, 75);
             this.lblPlayerMountId.Name = "lblPlayerMountId";
             this.lblPlayerMountId.Size = new System.Drawing.Size(72, 16);
             this.lblPlayerMountId.TabIndex = 21;
@@ -187,7 +212,7 @@
             // chkDutyManagerInInstance
             // 
             this.chkDutyManagerInInstance.AutoSize = true;
-            this.chkDutyManagerInInstance.Location = new System.Drawing.Point(144, 112);
+            this.chkDutyManagerInInstance.Location = new System.Drawing.Point(144, 151);
             this.chkDutyManagerInInstance.Name = "chkDutyManagerInInstance";
             this.chkDutyManagerInInstance.Size = new System.Drawing.Size(167, 19);
             this.chkDutyManagerInInstance.TabIndex = 18;
@@ -197,7 +222,7 @@
             // chkDutyManagerDutyReady
             // 
             this.chkDutyManagerDutyReady.AutoSize = true;
-            this.chkDutyManagerDutyReady.Location = new System.Drawing.Point(144, 128);
+            this.chkDutyManagerDutyReady.Location = new System.Drawing.Point(144, 167);
             this.chkDutyManagerDutyReady.Name = "chkDutyManagerDutyReady";
             this.chkDutyManagerDutyReady.Size = new System.Drawing.Size(173, 19);
             this.chkDutyManagerDutyReady.TabIndex = 17;
@@ -207,7 +232,7 @@
             // chkFateManagerWithinFate
             // 
             this.chkFateManagerWithinFate.AutoSize = true;
-            this.chkFateManagerWithinFate.Location = new System.Drawing.Point(144, 96);
+            this.chkFateManagerWithinFate.Location = new System.Drawing.Point(144, 135);
             this.chkFateManagerWithinFate.Name = "chkFateManagerWithinFate";
             this.chkFateManagerWithinFate.Size = new System.Drawing.Size(168, 19);
             this.chkFateManagerWithinFate.TabIndex = 13;
@@ -217,7 +242,7 @@
             // chkPlayerIsAlive
             // 
             this.chkPlayerIsAlive.AutoSize = true;
-            this.chkPlayerIsAlive.Location = new System.Drawing.Point(8, 112);
+            this.chkPlayerIsAlive.Location = new System.Drawing.Point(8, 151);
             this.chkPlayerIsAlive.Name = "chkPlayerIsAlive";
             this.chkPlayerIsAlive.Size = new System.Drawing.Size(101, 19);
             this.chkPlayerIsAlive.TabIndex = 11;
@@ -227,7 +252,7 @@
             // chkPlayerInCombat
             // 
             this.chkPlayerInCombat.AutoSize = true;
-            this.chkPlayerInCombat.Location = new System.Drawing.Point(8, 96);
+            this.chkPlayerInCombat.Location = new System.Drawing.Point(8, 135);
             this.chkPlayerInCombat.Name = "chkPlayerInCombat";
             this.chkPlayerInCombat.Size = new System.Drawing.Size(120, 19);
             this.chkPlayerInCombat.TabIndex = 10;
@@ -322,6 +347,19 @@
             this.grpMap.TabStop = false;
             this.grpMap.Text = "Map";
             // 
+            // btnCopyPlayerXYZ
+            // 
+            this.btnCopyPlayerXYZ.ForeColor = System.Drawing.Color.Black;
+            this.btnCopyPlayerXYZ.Image = global::Beholder.Properties.Resources.clipboard;
+            this.btnCopyPlayerXYZ.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnCopyPlayerXYZ.Location = new System.Drawing.Point(8, 136);
+            this.btnCopyPlayerXYZ.Name = "btnCopyPlayerXYZ";
+            this.btnCopyPlayerXYZ.Size = new System.Drawing.Size(312, 23);
+            this.btnCopyPlayerXYZ.TabIndex = 36;
+            this.btnCopyPlayerXYZ.Text = "Copy Position XYZ (XML)";
+            this.btnCopyPlayerXYZ.UseVisualStyleBackColor = true;
+            this.btnCopyPlayerXYZ.Click += new System.EventHandler(this.btnCopyPlayerXYZ_Click);
+            // 
             // btnCopyPlayerVector3
             // 
             this.btnCopyPlayerVector3.ForeColor = System.Drawing.Color.Black;
@@ -338,7 +376,7 @@
             // chkCommonBehaviorsIsLoading
             // 
             this.chkCommonBehaviorsIsLoading.AutoSize = true;
-            this.chkCommonBehaviorsIsLoading.Location = new System.Drawing.Point(8, 248);
+            this.chkCommonBehaviorsIsLoading.Location = new System.Drawing.Point(8, 240);
             this.chkCommonBehaviorsIsLoading.Name = "chkCommonBehaviorsIsLoading";
             this.chkCommonBehaviorsIsLoading.Size = new System.Drawing.Size(194, 19);
             this.chkCommonBehaviorsIsLoading.TabIndex = 28;
@@ -663,6 +701,19 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Target";
             // 
+            // btnCopyTargetXYZ
+            // 
+            this.btnCopyTargetXYZ.ForeColor = System.Drawing.Color.Black;
+            this.btnCopyTargetXYZ.Image = global::Beholder.Properties.Resources.clipboard;
+            this.btnCopyTargetXYZ.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnCopyTargetXYZ.Location = new System.Drawing.Point(8, 112);
+            this.btnCopyTargetXYZ.Name = "btnCopyTargetXYZ";
+            this.btnCopyTargetXYZ.Size = new System.Drawing.Size(312, 23);
+            this.btnCopyTargetXYZ.TabIndex = 35;
+            this.btnCopyTargetXYZ.Text = "Copy Position XYZ (XML)";
+            this.btnCopyTargetXYZ.UseVisualStyleBackColor = true;
+            this.btnCopyTargetXYZ.Click += new System.EventHandler(this.btnCopyTargetXYZ_Click);
+            // 
             // btnCopyTargetNpcObject
             // 
             this.btnCopyTargetNpcObject.ForeColor = System.Drawing.Color.Black;
@@ -759,31 +810,35 @@
             this.toolTip.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
             this.toolTip.ToolTipTitle = "Copied to clipboard!";
             // 
-            // btnCopyTargetXYZ
+            // checkBox1
             // 
-            this.btnCopyTargetXYZ.ForeColor = System.Drawing.Color.Black;
-            this.btnCopyTargetXYZ.Image = global::Beholder.Properties.Resources.clipboard;
-            this.btnCopyTargetXYZ.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnCopyTargetXYZ.Location = new System.Drawing.Point(8, 112);
-            this.btnCopyTargetXYZ.Name = "btnCopyTargetXYZ";
-            this.btnCopyTargetXYZ.Size = new System.Drawing.Size(312, 23);
-            this.btnCopyTargetXYZ.TabIndex = 35;
-            this.btnCopyTargetXYZ.Text = "Copy Position XYZ (XML)";
-            this.btnCopyTargetXYZ.UseVisualStyleBackColor = true;
-            this.btnCopyTargetXYZ.Click += new System.EventHandler(this.btnCopyTargetXYZ_Click);
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(8, 184);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(116, 19);
+            this.checkBox1.TabIndex = 29;
+            this.checkBox1.Text = "Player.IsCasting";
+            this.checkBox1.UseVisualStyleBackColor = true;
             // 
-            // btnCopyPlayerXYZ
+            // chkPlayerIsFishing
             // 
-            this.btnCopyPlayerXYZ.ForeColor = System.Drawing.Color.Black;
-            this.btnCopyPlayerXYZ.Image = global::Beholder.Properties.Resources.clipboard;
-            this.btnCopyPlayerXYZ.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnCopyPlayerXYZ.Location = new System.Drawing.Point(8, 136);
-            this.btnCopyPlayerXYZ.Name = "btnCopyPlayerXYZ";
-            this.btnCopyPlayerXYZ.Size = new System.Drawing.Size(312, 23);
-            this.btnCopyPlayerXYZ.TabIndex = 36;
-            this.btnCopyPlayerXYZ.Text = "Copy Position XYZ (XML)";
-            this.btnCopyPlayerXYZ.UseVisualStyleBackColor = true;
-            this.btnCopyPlayerXYZ.Click += new System.EventHandler(this.btnCopyPlayerXYZ_Click);
+            this.chkPlayerIsFishing.AutoSize = true;
+            this.chkPlayerIsFishing.Location = new System.Drawing.Point(8, 96);
+            this.chkPlayerIsFishing.Name = "chkPlayerIsFishing";
+            this.chkPlayerIsFishing.Size = new System.Drawing.Size(113, 19);
+            this.chkPlayerIsFishing.TabIndex = 30;
+            this.chkPlayerIsFishing.Text = "Player.IsFishing";
+            this.chkPlayerIsFishing.UseVisualStyleBackColor = true;
+            // 
+            // chkPlayerIsOnFishingBoat
+            // 
+            this.chkPlayerIsOnFishingBoat.AutoSize = true;
+            this.chkPlayerIsOnFishingBoat.Location = new System.Drawing.Point(8, 112);
+            this.chkPlayerIsOnFishingBoat.Name = "chkPlayerIsOnFishingBoat";
+            this.chkPlayerIsOnFishingBoat.Size = new System.Drawing.Size(156, 19);
+            this.chkPlayerIsOnFishingBoat.TabIndex = 37;
+            this.chkPlayerIsOnFishingBoat.Text = "Player.IsOnFishingBoat";
+            this.chkPlayerIsOnFishingBoat.UseVisualStyleBackColor = true;
             // 
             // frmMain
             // 
@@ -888,5 +943,10 @@
         private System.Windows.Forms.Button btnCopyPlayerVector3;
         private System.Windows.Forms.Button btnCopyTargetXYZ;
         private System.Windows.Forms.Button btnCopyPlayerXYZ;
+        private System.Windows.Forms.Label lblPlayerFishingState;
+        private System.Windows.Forms.TextBox txtPlayerFishingState;
+        private System.Windows.Forms.CheckBox chkPlayerIsFishing;
+        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.CheckBox chkPlayerIsOnFishingBoat;
     }
 }
