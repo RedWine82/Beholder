@@ -43,16 +43,6 @@
                 txtPlayerId.Text = Core.Player.ObjectId.ToString();
                 txtPlayerName.Text = Core.Player.Name;
 
-                txtTargetId.Text = GameObjectManager.Target == null ? "NULL" : GameObjectManager.Target.ObjectId.ToString();
-                txtTargetNpcId.Text = GameObjectManager.Target == null ? "" : GameObjectManager.Target.NpcId.ToString();
-                txtTargetName.Text = GameObjectManager.Target == null ? "" : GameObjectManager.Target.Name;
-
-                txtTargetPosition.Text = GameObjectManager.Target == null ? "" : FormatPosition(GameObjectManager.Target.Location);
-
-                btnCopyTargetVector3.Enabled = GameObjectManager.Target != null && GameObjectManager.Target.NpcId != 0;
-                btnCopyTargetNpcObject.Enabled = GameObjectManager.Target != null && GameObjectManager.Target.NpcId != 0;
-                btnCopyTargetXYZ.Enabled = GameObjectManager.Target != null && GameObjectManager.Target.NpcId != 0;
-
                 chkPlayerIsMounted.Checked = Core.Player.IsMounted;
                 txtPlayerMountId.Text = LocalPlayerExtensions.CurrentMount(Core.Player).ToString();
 
@@ -70,6 +60,20 @@
 
                 chkMovementManagerIsMoving.Checked = MovementManager.IsMoving;
                 chkMovementManagerIsOccupied.Checked = MovementManager.IsOccupied;
+
+                // Target
+                txtTargetId.Text = GameObjectManager.Target == null ? "NULL" : GameObjectManager.Target.ObjectId.ToString();
+                txtTargetNpcId.Text = GameObjectManager.Target == null ? "" : GameObjectManager.Target.NpcId.ToString();
+                txtTargetName.Text = GameObjectManager.Target == null ? "" : GameObjectManager.Target.Name;
+
+                txtTargetPosition.Text = GameObjectManager.Target == null ? "" : FormatPosition(GameObjectManager.Target.Location);
+                txtTargetDistance2d.Text = GameObjectManager.Target == null ? "" : GameObjectManager.Target.Location.Distance2D(Core.Player.Location).ToString();
+                txtTargetDistance2dSqr.Text = GameObjectManager.Target == null ? "" : GameObjectManager.Target.Location.Distance2DSqr(Core.Player.Location).ToString();
+                txtTargetDistance3d.Text = GameObjectManager.Target == null ? "" : GameObjectManager.Target.Location.Distance3D(Core.Player.Location).ToString();
+
+                btnCopyTargetVector3.Enabled = GameObjectManager.Target != null && GameObjectManager.Target.NpcId != 0;
+                btnCopyTargetNpcObject.Enabled = GameObjectManager.Target != null && GameObjectManager.Target.NpcId != 0;
+                btnCopyTargetXYZ.Enabled = GameObjectManager.Target != null && GameObjectManager.Target.NpcId != 0;
 
                 // Map
                 txtMapId.Text = WorldManager.ZoneId.ToString();

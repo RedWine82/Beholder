@@ -31,6 +31,9 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
             this.grpPlayer = new System.Windows.Forms.GroupBox();
+            this.chkPlayerIsOnFishingBoat = new System.Windows.Forms.CheckBox();
+            this.chkPlayerIsFishing = new System.Windows.Forms.CheckBox();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.lblPlayerFishingState = new System.Windows.Forms.Label();
             this.txtPlayerFishingState = new System.Windows.Forms.TextBox();
             this.chkMovementManagerIsOccupied = new System.Windows.Forms.CheckBox();
@@ -97,9 +100,12 @@
             this.txtTargetId = new System.Windows.Forms.TextBox();
             this.lblTargetId = new System.Windows.Forms.Label();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.chkPlayerIsFishing = new System.Windows.Forms.CheckBox();
-            this.chkPlayerIsOnFishingBoat = new System.Windows.Forms.CheckBox();
+            this.txtTargetDistance2d = new System.Windows.Forms.TextBox();
+            this.lblTargetDistance2d = new System.Windows.Forms.Label();
+            this.txtTargetDistance2dSqr = new System.Windows.Forms.TextBox();
+            this.lblTargetDistance2dSqr = new System.Windows.Forms.Label();
+            this.txtTargetDistance3d = new System.Windows.Forms.TextBox();
+            this.lblTargetDistance3d = new System.Windows.Forms.Label();
             this.grpPlayer.SuspendLayout();
             this.grpMap.SuspendLayout();
             this.grpGameObjects.SuspendLayout();
@@ -138,9 +144,39 @@
             this.grpPlayer.TabStop = false;
             this.grpPlayer.Text = "Player";
             // 
+            // chkPlayerIsOnFishingBoat
+            // 
+            this.chkPlayerIsOnFishingBoat.AutoSize = true;
+            this.chkPlayerIsOnFishingBoat.Location = new System.Drawing.Point(8, 112);
+            this.chkPlayerIsOnFishingBoat.Name = "chkPlayerIsOnFishingBoat";
+            this.chkPlayerIsOnFishingBoat.Size = new System.Drawing.Size(156, 19);
+            this.chkPlayerIsOnFishingBoat.TabIndex = 37;
+            this.chkPlayerIsOnFishingBoat.Text = "Player.IsOnFishingBoat";
+            this.chkPlayerIsOnFishingBoat.UseVisualStyleBackColor = true;
+            // 
+            // chkPlayerIsFishing
+            // 
+            this.chkPlayerIsFishing.AutoSize = true;
+            this.chkPlayerIsFishing.Location = new System.Drawing.Point(8, 96);
+            this.chkPlayerIsFishing.Name = "chkPlayerIsFishing";
+            this.chkPlayerIsFishing.Size = new System.Drawing.Size(113, 19);
+            this.chkPlayerIsFishing.TabIndex = 30;
+            this.chkPlayerIsFishing.Text = "Player.IsFishing";
+            this.chkPlayerIsFishing.UseVisualStyleBackColor = true;
+            // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(8, 184);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(116, 19);
+            this.checkBox1.TabIndex = 29;
+            this.checkBox1.Text = "Player.IsCasting";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            // 
             // lblPlayerFishingState
             // 
-            this.lblPlayerFishingState.Location = new System.Drawing.Point(168, 97);
+            this.lblPlayerFishingState.Location = new System.Drawing.Point(144, 97);
             this.lblPlayerFishingState.Name = "lblPlayerFishingState";
             this.lblPlayerFishingState.Size = new System.Drawing.Size(88, 16);
             this.lblPlayerFishingState.TabIndex = 28;
@@ -148,9 +184,9 @@
             // 
             // txtPlayerFishingState
             // 
-            this.txtPlayerFishingState.Location = new System.Drawing.Point(260, 94);
+            this.txtPlayerFishingState.Location = new System.Drawing.Point(232, 94);
             this.txtPlayerFishingState.Name = "txtPlayerFishingState";
-            this.txtPlayerFishingState.Size = new System.Drawing.Size(60, 22);
+            this.txtPlayerFishingState.Size = new System.Drawing.Size(88, 22);
             this.txtPlayerFishingState.TabIndex = 27;
             // 
             // chkMovementManagerIsOccupied
@@ -185,7 +221,7 @@
             // 
             // lblPlayerMountId
             // 
-            this.lblPlayerMountId.Location = new System.Drawing.Point(168, 75);
+            this.lblPlayerMountId.Location = new System.Drawing.Point(144, 75);
             this.lblPlayerMountId.Name = "lblPlayerMountId";
             this.lblPlayerMountId.Size = new System.Drawing.Size(72, 16);
             this.lblPlayerMountId.TabIndex = 21;
@@ -193,9 +229,9 @@
             // 
             // txtPlayerMountId
             // 
-            this.txtPlayerMountId.Location = new System.Drawing.Point(260, 72);
+            this.txtPlayerMountId.Location = new System.Drawing.Point(232, 72);
             this.txtPlayerMountId.Name = "txtPlayerMountId";
-            this.txtPlayerMountId.Size = new System.Drawing.Size(60, 22);
+            this.txtPlayerMountId.Size = new System.Drawing.Size(88, 22);
             this.txtPlayerMountId.TabIndex = 20;
             this.txtPlayerMountId.Click += new System.EventHandler(this.textboxes_CopyValueToClipboard);
             // 
@@ -682,6 +718,12 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.txtTargetDistance3d);
+            this.groupBox1.Controls.Add(this.lblTargetDistance3d);
+            this.groupBox1.Controls.Add(this.txtTargetDistance2dSqr);
+            this.groupBox1.Controls.Add(this.lblTargetDistance2dSqr);
+            this.groupBox1.Controls.Add(this.txtTargetDistance2d);
+            this.groupBox1.Controls.Add(this.lblTargetDistance2d);
             this.groupBox1.Controls.Add(this.btnCopyTargetXYZ);
             this.groupBox1.Controls.Add(this.btnCopyTargetNpcObject);
             this.groupBox1.Controls.Add(this.btnCopyTargetVector3);
@@ -810,35 +852,50 @@
             this.toolTip.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
             this.toolTip.ToolTipTitle = "Copied to clipboard!";
             // 
-            // checkBox1
+            // txtTargetDistance2d
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(8, 184);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(116, 19);
-            this.checkBox1.TabIndex = 29;
-            this.checkBox1.Text = "Player.IsCasting";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.txtTargetDistance2d.Location = new System.Drawing.Point(104, 184);
+            this.txtTargetDistance2d.Name = "txtTargetDistance2d";
+            this.txtTargetDistance2d.Size = new System.Drawing.Size(216, 22);
+            this.txtTargetDistance2d.TabIndex = 37;
             // 
-            // chkPlayerIsFishing
+            // lblTargetDistance2d
             // 
-            this.chkPlayerIsFishing.AutoSize = true;
-            this.chkPlayerIsFishing.Location = new System.Drawing.Point(8, 96);
-            this.chkPlayerIsFishing.Name = "chkPlayerIsFishing";
-            this.chkPlayerIsFishing.Size = new System.Drawing.Size(113, 19);
-            this.chkPlayerIsFishing.TabIndex = 30;
-            this.chkPlayerIsFishing.Text = "Player.IsFishing";
-            this.chkPlayerIsFishing.UseVisualStyleBackColor = true;
+            this.lblTargetDistance2d.Location = new System.Drawing.Point(8, 187);
+            this.lblTargetDistance2d.Name = "lblTargetDistance2d";
+            this.lblTargetDistance2d.Size = new System.Drawing.Size(96, 16);
+            this.lblTargetDistance2d.TabIndex = 36;
+            this.lblTargetDistance2d.Text = "Distance 2D";
             // 
-            // chkPlayerIsOnFishingBoat
+            // txtTargetDistance2dSqr
             // 
-            this.chkPlayerIsOnFishingBoat.AutoSize = true;
-            this.chkPlayerIsOnFishingBoat.Location = new System.Drawing.Point(8, 112);
-            this.chkPlayerIsOnFishingBoat.Name = "chkPlayerIsOnFishingBoat";
-            this.chkPlayerIsOnFishingBoat.Size = new System.Drawing.Size(156, 19);
-            this.chkPlayerIsOnFishingBoat.TabIndex = 37;
-            this.chkPlayerIsOnFishingBoat.Text = "Player.IsOnFishingBoat";
-            this.chkPlayerIsOnFishingBoat.UseVisualStyleBackColor = true;
+            this.txtTargetDistance2dSqr.Location = new System.Drawing.Point(104, 208);
+            this.txtTargetDistance2dSqr.Name = "txtTargetDistance2dSqr";
+            this.txtTargetDistance2dSqr.Size = new System.Drawing.Size(216, 22);
+            this.txtTargetDistance2dSqr.TabIndex = 39;
+            // 
+            // lblTargetDistance2dSqr
+            // 
+            this.lblTargetDistance2dSqr.Location = new System.Drawing.Point(8, 211);
+            this.lblTargetDistance2dSqr.Name = "lblTargetDistance2dSqr";
+            this.lblTargetDistance2dSqr.Size = new System.Drawing.Size(96, 16);
+            this.lblTargetDistance2dSqr.TabIndex = 38;
+            this.lblTargetDistance2dSqr.Text = "Dist. 2D Sqr";
+            // 
+            // txtTargetDistance3d
+            // 
+            this.txtTargetDistance3d.Location = new System.Drawing.Point(104, 232);
+            this.txtTargetDistance3d.Name = "txtTargetDistance3d";
+            this.txtTargetDistance3d.Size = new System.Drawing.Size(216, 22);
+            this.txtTargetDistance3d.TabIndex = 41;
+            // 
+            // lblTargetDistance3d
+            // 
+            this.lblTargetDistance3d.Location = new System.Drawing.Point(8, 235);
+            this.lblTargetDistance3d.Name = "lblTargetDistance3d";
+            this.lblTargetDistance3d.Size = new System.Drawing.Size(96, 16);
+            this.lblTargetDistance3d.TabIndex = 40;
+            this.lblTargetDistance3d.Text = "Distance 3D";
             // 
             // frmMain
             // 
@@ -948,5 +1005,11 @@
         private System.Windows.Forms.CheckBox chkPlayerIsFishing;
         private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.CheckBox chkPlayerIsOnFishingBoat;
+        private System.Windows.Forms.TextBox txtTargetDistance2d;
+        private System.Windows.Forms.Label lblTargetDistance2d;
+        private System.Windows.Forms.TextBox txtTargetDistance3d;
+        private System.Windows.Forms.Label lblTargetDistance3d;
+        private System.Windows.Forms.TextBox txtTargetDistance2dSqr;
+        private System.Windows.Forms.Label lblTargetDistance2dSqr;
     }
 }
