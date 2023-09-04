@@ -103,6 +103,7 @@
                 chkCraftingLogIsOpen.Checked = CraftingLog.IsOpen;
                 chkCraftingManagerIsCrafting.Checked = CraftingManager.IsCrafting;
                 chkSynthesisIsOpen.Checked = Synthesis.IsOpen;
+                chkQuestLogManagerInCutscene.Checked = QuestLogManager.InCutscene;
             }
             catch (NullReferenceException)
             {

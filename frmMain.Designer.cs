@@ -106,6 +106,7 @@
             this.lblTargetDistance2dSqr = new System.Windows.Forms.Label();
             this.txtTargetDistance3d = new System.Windows.Forms.TextBox();
             this.lblTargetDistance3d = new System.Windows.Forms.Label();
+            this.chkQuestLogManagerInCutscene = new System.Windows.Forms.CheckBox();
             this.grpPlayer.SuspendLayout();
             this.grpMap.SuspendLayout();
             this.grpGameObjects.SuspendLayout();
@@ -551,6 +552,7 @@
             // 
             // grpUi
             // 
+            this.grpUi.Controls.Add(this.chkQuestLogManagerInCutscene);
             this.grpUi.Controls.Add(this.chkShopProxyIsOpen);
             this.grpUi.Controls.Add(this.chkJournalResultIsOpen);
             this.grpUi.Controls.Add(this.chkJournalAcceptIsOpen);
@@ -896,6 +898,16 @@
             this.lblTargetDistance3d.Size = new System.Drawing.Size(96, 16);
             this.lblTargetDistance3d.TabIndex = 40;
             this.lblTargetDistance3d.Text = "Distance 3D";
+            //
+            // chkQuestLogManagerInCutscene
+            // 
+            this.chkQuestLogManagerInCutscene.AutoSize = true;
+            this.chkQuestLogManagerInCutscene.Location = new System.Drawing.Point(8, 192);
+            this.chkQuestLogManagerInCutscene.Name = "chkQuestLogManagerInCutscene";
+            this.chkQuestLogManagerInCutscene.Size = new System.Drawing.Size(200, 19);
+            this.chkQuestLogManagerInCutscene.TabIndex = 26;
+            this.chkQuestLogManagerInCutscene.Text = "QuestLogManager.InCutscene";
+            this.chkQuestLogManagerInCutscene.UseVisualStyleBackColor = true;
             // 
             // frmMain
             // 
@@ -1011,5 +1023,6 @@
         private System.Windows.Forms.Label lblTargetDistance3d;
         private System.Windows.Forms.TextBox txtTargetDistance2dSqr;
         private System.Windows.Forms.Label lblTargetDistance2dSqr;
+        private System.Windows.Forms.CheckBox chkQuestLogManagerInCutscene;
     }
 }
