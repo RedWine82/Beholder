@@ -13,6 +13,7 @@
     using ff14bot.RemoteWindows;
     using LlamaLibrary.Extensions;
     using LlamaLibrary.RemoteWindows;
+    using System.Windows.Input;
 
     public partial class frmMain : Form
     {
@@ -32,7 +33,7 @@
         {
             try
             {
-                Pulsator.Pulse(PulseFlags.All);
+                Pulsator.Pulse(PulseFlags.ObjectManager | PulseFlags.Windows);
 
                 chkCommonBehaviorsIsLoading.Checked = CommonBehaviors.IsLoading;
 
@@ -78,6 +79,8 @@
                 // Map
                 txtMapId.Text = WorldManager.ZoneId.ToString();
                 txtMapName.Text = WorldManager.CurrentZoneName;
+
+                txtMapSubZoneId.Text = WorldManager.SubZoneId.ToString();
 
                 txtMapWeatherId.Text = WorldManager.CurrentWeatherId.ToString();
                 txtMapWeather.Text = WorldManager.CurrentWeather;
@@ -182,7 +185,8 @@
             if (GameObjectManager.Target == null || GameObjectManager.Target.NpcId == 0)
                 return;
 
-            Clipboard.SetText($"{createNpcObjectFromTarget(GameObjectManager.Target)} // {GameObjectManager.Target.Name}, {WorldManager.CurrentZoneName}");
+            string addComma = Control.ModifierKeys == Keys.Shift ? "," : "";
+            Clipboard.SetText($"{createNpcObjectFromTarget(GameObjectManager.Target)}{addComma} // {GameObjectManager.Target.Name}, {WorldManager.CurrentZoneName}");
             toolTip.Show("C# code copied to clipboard!", btnCopyTargetNpcObject, 2000);
         }
 

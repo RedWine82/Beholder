@@ -73,6 +73,7 @@
             this.grpGameObjects = new System.Windows.Forms.GroupBox();
             this.dgvGameObjects = new System.Windows.Forms.DataGridView();
             this.grpUi = new System.Windows.Forms.GroupBox();
+            this.chkQuestLogManagerInCutscene = new System.Windows.Forms.CheckBox();
             this.chkShopProxyIsOpen = new System.Windows.Forms.CheckBox();
             this.chkJournalResultIsOpen = new System.Windows.Forms.CheckBox();
             this.chkJournalAcceptIsOpen = new System.Windows.Forms.CheckBox();
@@ -88,6 +89,12 @@
             this.chkShopExchangeItemIsOpen = new System.Windows.Forms.CheckBox();
             this.chkAlwaysOnTop = new System.Windows.Forms.CheckBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtTargetDistance3d = new System.Windows.Forms.TextBox();
+            this.lblTargetDistance3d = new System.Windows.Forms.Label();
+            this.txtTargetDistance2dSqr = new System.Windows.Forms.TextBox();
+            this.lblTargetDistance2dSqr = new System.Windows.Forms.Label();
+            this.txtTargetDistance2d = new System.Windows.Forms.TextBox();
+            this.lblTargetDistance2d = new System.Windows.Forms.Label();
             this.btnCopyTargetXYZ = new System.Windows.Forms.Button();
             this.btnCopyTargetNpcObject = new System.Windows.Forms.Button();
             this.btnCopyTargetVector3 = new System.Windows.Forms.Button();
@@ -100,13 +107,8 @@
             this.txtTargetId = new System.Windows.Forms.TextBox();
             this.lblTargetId = new System.Windows.Forms.Label();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
-            this.txtTargetDistance2d = new System.Windows.Forms.TextBox();
-            this.lblTargetDistance2d = new System.Windows.Forms.Label();
-            this.txtTargetDistance2dSqr = new System.Windows.Forms.TextBox();
-            this.lblTargetDistance2dSqr = new System.Windows.Forms.Label();
-            this.txtTargetDistance3d = new System.Windows.Forms.TextBox();
-            this.lblTargetDistance3d = new System.Windows.Forms.Label();
-            this.chkQuestLogManagerInCutscene = new System.Windows.Forms.CheckBox();
+            this.txtMapSubZoneId = new System.Windows.Forms.TextBox();
+            this.lblMapSubZoneId = new System.Windows.Forms.Label();
             this.grpPlayer.SuspendLayout();
             this.grpMap.SuspendLayout();
             this.grpGameObjects.SuspendLayout();
@@ -330,7 +332,7 @@
             // 
             // txtMapPlayerPosition
             // 
-            this.txtMapPlayerPosition.Location = new System.Drawing.Point(104, 112);
+            this.txtMapPlayerPosition.Location = new System.Drawing.Point(104, 136);
             this.txtMapPlayerPosition.Name = "txtMapPlayerPosition";
             this.txtMapPlayerPosition.Size = new System.Drawing.Size(216, 22);
             this.txtMapPlayerPosition.TabIndex = 9;
@@ -338,7 +340,7 @@
             // 
             // lblMapPlayerPosition
             // 
-            this.lblMapPlayerPosition.Location = new System.Drawing.Point(8, 115);
+            this.lblMapPlayerPosition.Location = new System.Drawing.Point(8, 139);
             this.lblMapPlayerPosition.Name = "lblMapPlayerPosition";
             this.lblMapPlayerPosition.Size = new System.Drawing.Size(96, 16);
             this.lblMapPlayerPosition.TabIndex = 6;
@@ -361,6 +363,8 @@
             // 
             // grpMap
             // 
+            this.grpMap.Controls.Add(this.txtMapSubZoneId);
+            this.grpMap.Controls.Add(this.lblMapSubZoneId);
             this.grpMap.Controls.Add(this.btnCopyPlayerXYZ);
             this.grpMap.Controls.Add(this.btnCopyPlayerVector3);
             this.grpMap.Controls.Add(this.chkCommonBehaviorsIsLoading);
@@ -389,7 +393,7 @@
             this.btnCopyPlayerXYZ.ForeColor = System.Drawing.Color.Black;
             this.btnCopyPlayerXYZ.Image = global::Beholder.Properties.Resources.clipboard;
             this.btnCopyPlayerXYZ.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnCopyPlayerXYZ.Location = new System.Drawing.Point(8, 136);
+            this.btnCopyPlayerXYZ.Location = new System.Drawing.Point(8, 160);
             this.btnCopyPlayerXYZ.Name = "btnCopyPlayerXYZ";
             this.btnCopyPlayerXYZ.Size = new System.Drawing.Size(312, 23);
             this.btnCopyPlayerXYZ.TabIndex = 36;
@@ -402,7 +406,7 @@
             this.btnCopyPlayerVector3.ForeColor = System.Drawing.Color.Black;
             this.btnCopyPlayerVector3.Image = global::Beholder.Properties.Resources.clipboard;
             this.btnCopyPlayerVector3.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnCopyPlayerVector3.Location = new System.Drawing.Point(8, 160);
+            this.btnCopyPlayerVector3.Location = new System.Drawing.Point(8, 184);
             this.btnCopyPlayerVector3.Name = "btnCopyPlayerVector3";
             this.btnCopyPlayerVector3.Size = new System.Drawing.Size(312, 23);
             this.btnCopyPlayerVector3.TabIndex = 35;
@@ -413,7 +417,7 @@
             // chkCommonBehaviorsIsLoading
             // 
             this.chkCommonBehaviorsIsLoading.AutoSize = true;
-            this.chkCommonBehaviorsIsLoading.Location = new System.Drawing.Point(8, 240);
+            this.chkCommonBehaviorsIsLoading.Location = new System.Drawing.Point(8, 248);
             this.chkCommonBehaviorsIsLoading.Name = "chkCommonBehaviorsIsLoading";
             this.chkCommonBehaviorsIsLoading.Size = new System.Drawing.Size(194, 19);
             this.chkCommonBehaviorsIsLoading.TabIndex = 28;
@@ -422,7 +426,7 @@
             // 
             // txtMapWeather
             // 
-            this.txtMapWeather.Location = new System.Drawing.Point(104, 88);
+            this.txtMapWeather.Location = new System.Drawing.Point(104, 112);
             this.txtMapWeather.Name = "txtMapWeather";
             this.txtMapWeather.Size = new System.Drawing.Size(216, 22);
             this.txtMapWeather.TabIndex = 27;
@@ -430,7 +434,7 @@
             // 
             // label1
             // 
-            this.label1.Location = new System.Drawing.Point(8, 91);
+            this.label1.Location = new System.Drawing.Point(8, 115);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(96, 16);
             this.label1.TabIndex = 26;
@@ -438,7 +442,7 @@
             // 
             // txtMapWeatherId
             // 
-            this.txtMapWeatherId.Location = new System.Drawing.Point(104, 64);
+            this.txtMapWeatherId.Location = new System.Drawing.Point(104, 88);
             this.txtMapWeatherId.Name = "txtMapWeatherId";
             this.txtMapWeatherId.Size = new System.Drawing.Size(216, 22);
             this.txtMapWeatherId.TabIndex = 25;
@@ -446,7 +450,7 @@
             // 
             // label2
             // 
-            this.label2.Location = new System.Drawing.Point(8, 67);
+            this.label2.Location = new System.Drawing.Point(8, 91);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(96, 16);
             this.label2.TabIndex = 24;
@@ -455,7 +459,7 @@
             // chkMapWorldManagerCanTeleport
             // 
             this.chkMapWorldManagerCanTeleport.AutoSize = true;
-            this.chkMapWorldManagerCanTeleport.Location = new System.Drawing.Point(8, 208);
+            this.chkMapWorldManagerCanTeleport.Location = new System.Drawing.Point(8, 216);
             this.chkMapWorldManagerCanTeleport.Name = "chkMapWorldManagerCanTeleport";
             this.chkMapWorldManagerCanTeleport.Size = new System.Drawing.Size(185, 19);
             this.chkMapWorldManagerCanTeleport.TabIndex = 23;
@@ -465,7 +469,7 @@
             // chkMapWorldManagerCanFly
             // 
             this.chkMapWorldManagerCanFly.AutoSize = true;
-            this.chkMapWorldManagerCanFly.Location = new System.Drawing.Point(8, 192);
+            this.chkMapWorldManagerCanFly.Location = new System.Drawing.Point(8, 232);
             this.chkMapWorldManagerCanFly.Name = "chkMapWorldManagerCanFly";
             this.chkMapWorldManagerCanFly.Size = new System.Drawing.Size(153, 19);
             this.chkMapWorldManagerCanFly.TabIndex = 22;
@@ -574,6 +578,16 @@
             this.grpUi.TabIndex = 28;
             this.grpUi.TabStop = false;
             this.grpUi.Text = "UI";
+            // 
+            // chkQuestLogManagerInCutscene
+            // 
+            this.chkQuestLogManagerInCutscene.AutoSize = true;
+            this.chkQuestLogManagerInCutscene.Location = new System.Drawing.Point(8, 192);
+            this.chkQuestLogManagerInCutscene.Name = "chkQuestLogManagerInCutscene";
+            this.chkQuestLogManagerInCutscene.Size = new System.Drawing.Size(200, 19);
+            this.chkQuestLogManagerInCutscene.TabIndex = 26;
+            this.chkQuestLogManagerInCutscene.Text = "QuestLogManager.InCutscene";
+            this.chkQuestLogManagerInCutscene.UseVisualStyleBackColor = true;
             // 
             // chkShopProxyIsOpen
             // 
@@ -745,6 +759,51 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Target";
             // 
+            // txtTargetDistance3d
+            // 
+            this.txtTargetDistance3d.Location = new System.Drawing.Point(104, 232);
+            this.txtTargetDistance3d.Name = "txtTargetDistance3d";
+            this.txtTargetDistance3d.Size = new System.Drawing.Size(216, 22);
+            this.txtTargetDistance3d.TabIndex = 41;
+            // 
+            // lblTargetDistance3d
+            // 
+            this.lblTargetDistance3d.Location = new System.Drawing.Point(8, 235);
+            this.lblTargetDistance3d.Name = "lblTargetDistance3d";
+            this.lblTargetDistance3d.Size = new System.Drawing.Size(96, 16);
+            this.lblTargetDistance3d.TabIndex = 40;
+            this.lblTargetDistance3d.Text = "Distance 3D";
+            // 
+            // txtTargetDistance2dSqr
+            // 
+            this.txtTargetDistance2dSqr.Location = new System.Drawing.Point(104, 208);
+            this.txtTargetDistance2dSqr.Name = "txtTargetDistance2dSqr";
+            this.txtTargetDistance2dSqr.Size = new System.Drawing.Size(216, 22);
+            this.txtTargetDistance2dSqr.TabIndex = 39;
+            // 
+            // lblTargetDistance2dSqr
+            // 
+            this.lblTargetDistance2dSqr.Location = new System.Drawing.Point(8, 211);
+            this.lblTargetDistance2dSqr.Name = "lblTargetDistance2dSqr";
+            this.lblTargetDistance2dSqr.Size = new System.Drawing.Size(96, 16);
+            this.lblTargetDistance2dSqr.TabIndex = 38;
+            this.lblTargetDistance2dSqr.Text = "Dist. 2D Sqr";
+            // 
+            // txtTargetDistance2d
+            // 
+            this.txtTargetDistance2d.Location = new System.Drawing.Point(104, 184);
+            this.txtTargetDistance2d.Name = "txtTargetDistance2d";
+            this.txtTargetDistance2d.Size = new System.Drawing.Size(216, 22);
+            this.txtTargetDistance2d.TabIndex = 37;
+            // 
+            // lblTargetDistance2d
+            // 
+            this.lblTargetDistance2d.Location = new System.Drawing.Point(8, 187);
+            this.lblTargetDistance2d.Name = "lblTargetDistance2d";
+            this.lblTargetDistance2d.Size = new System.Drawing.Size(96, 16);
+            this.lblTargetDistance2d.TabIndex = 36;
+            this.lblTargetDistance2d.Text = "Distance 2D";
+            // 
             // btnCopyTargetXYZ
             // 
             this.btnCopyTargetXYZ.ForeColor = System.Drawing.Color.Black;
@@ -854,60 +913,20 @@
             this.toolTip.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
             this.toolTip.ToolTipTitle = "Copied to clipboard!";
             // 
-            // txtTargetDistance2d
+            // txtMapSubZoneId
             // 
-            this.txtTargetDistance2d.Location = new System.Drawing.Point(104, 184);
-            this.txtTargetDistance2d.Name = "txtTargetDistance2d";
-            this.txtTargetDistance2d.Size = new System.Drawing.Size(216, 22);
-            this.txtTargetDistance2d.TabIndex = 37;
+            this.txtMapSubZoneId.Location = new System.Drawing.Point(104, 64);
+            this.txtMapSubZoneId.Name = "txtMapSubZoneId";
+            this.txtMapSubZoneId.Size = new System.Drawing.Size(216, 22);
+            this.txtMapSubZoneId.TabIndex = 38;
             // 
-            // lblTargetDistance2d
+            // lblMapSubZoneId
             // 
-            this.lblTargetDistance2d.Location = new System.Drawing.Point(8, 187);
-            this.lblTargetDistance2d.Name = "lblTargetDistance2d";
-            this.lblTargetDistance2d.Size = new System.Drawing.Size(96, 16);
-            this.lblTargetDistance2d.TabIndex = 36;
-            this.lblTargetDistance2d.Text = "Distance 2D";
-            // 
-            // txtTargetDistance2dSqr
-            // 
-            this.txtTargetDistance2dSqr.Location = new System.Drawing.Point(104, 208);
-            this.txtTargetDistance2dSqr.Name = "txtTargetDistance2dSqr";
-            this.txtTargetDistance2dSqr.Size = new System.Drawing.Size(216, 22);
-            this.txtTargetDistance2dSqr.TabIndex = 39;
-            // 
-            // lblTargetDistance2dSqr
-            // 
-            this.lblTargetDistance2dSqr.Location = new System.Drawing.Point(8, 211);
-            this.lblTargetDistance2dSqr.Name = "lblTargetDistance2dSqr";
-            this.lblTargetDistance2dSqr.Size = new System.Drawing.Size(96, 16);
-            this.lblTargetDistance2dSqr.TabIndex = 38;
-            this.lblTargetDistance2dSqr.Text = "Dist. 2D Sqr";
-            // 
-            // txtTargetDistance3d
-            // 
-            this.txtTargetDistance3d.Location = new System.Drawing.Point(104, 232);
-            this.txtTargetDistance3d.Name = "txtTargetDistance3d";
-            this.txtTargetDistance3d.Size = new System.Drawing.Size(216, 22);
-            this.txtTargetDistance3d.TabIndex = 41;
-            // 
-            // lblTargetDistance3d
-            // 
-            this.lblTargetDistance3d.Location = new System.Drawing.Point(8, 235);
-            this.lblTargetDistance3d.Name = "lblTargetDistance3d";
-            this.lblTargetDistance3d.Size = new System.Drawing.Size(96, 16);
-            this.lblTargetDistance3d.TabIndex = 40;
-            this.lblTargetDistance3d.Text = "Distance 3D";
-            //
-            // chkQuestLogManagerInCutscene
-            // 
-            this.chkQuestLogManagerInCutscene.AutoSize = true;
-            this.chkQuestLogManagerInCutscene.Location = new System.Drawing.Point(8, 192);
-            this.chkQuestLogManagerInCutscene.Name = "chkQuestLogManagerInCutscene";
-            this.chkQuestLogManagerInCutscene.Size = new System.Drawing.Size(200, 19);
-            this.chkQuestLogManagerInCutscene.TabIndex = 26;
-            this.chkQuestLogManagerInCutscene.Text = "QuestLogManager.InCutscene";
-            this.chkQuestLogManagerInCutscene.UseVisualStyleBackColor = true;
+            this.lblMapSubZoneId.Location = new System.Drawing.Point(8, 67);
+            this.lblMapSubZoneId.Name = "lblMapSubZoneId";
+            this.lblMapSubZoneId.Size = new System.Drawing.Size(96, 16);
+            this.lblMapSubZoneId.TabIndex = 37;
+            this.lblMapSubZoneId.Text = "SubZone ID";
             // 
             // frmMain
             // 
@@ -1024,5 +1043,7 @@
         private System.Windows.Forms.TextBox txtTargetDistance2dSqr;
         private System.Windows.Forms.Label lblTargetDistance2dSqr;
         private System.Windows.Forms.CheckBox chkQuestLogManagerInCutscene;
+        private System.Windows.Forms.TextBox txtMapSubZoneId;
+        private System.Windows.Forms.Label lblMapSubZoneId;
     }
 }
