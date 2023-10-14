@@ -13,7 +13,6 @@
     using ff14bot.RemoteWindows;
     using LlamaLibrary.Extensions;
     using LlamaLibrary.RemoteWindows;
-    using System.Windows.Input;
 
     public partial class frmMain : Form
     {
@@ -81,6 +80,7 @@
                 txtMapName.Text = WorldManager.CurrentZoneName;
 
                 txtMapSubZoneId.Text = WorldManager.SubZoneId.ToString();
+                txtMapSubZoneName.Text = LlamaLibrary.Helpers.WorldHelper.CurrentPlaceName;
 
                 txtMapWeatherId.Text = WorldManager.CurrentWeatherId.ToString();
                 txtMapWeather.Text = WorldManager.CurrentWeather;
@@ -186,7 +186,7 @@
                 return;
 
             string addComma = Control.ModifierKeys == Keys.Shift ? "," : "";
-            Clipboard.SetText($"{createNpcObjectFromTarget(GameObjectManager.Target)}{addComma} // {GameObjectManager.Target.Name}, {WorldManager.CurrentZoneName}");
+            Clipboard.SetText($"{createNpcObjectFromTarget(GameObjectManager.Target)}{addComma} // {GameObjectManager.Target.Name}, {WorldManager.CurrentZoneName}" + (LlamaLibrary.Helpers.WorldHelper.CurrentPlaceName != string.Empty ? " (" + LlamaLibrary.Helpers.WorldHelper.CurrentPlaceName + ")" : ""));
             toolTip.Show("C# code copied to clipboard!", btnCopyTargetNpcObject, 2000);
         }
 

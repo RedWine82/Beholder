@@ -56,6 +56,8 @@
             this.chkTalkDialogOpen = new System.Windows.Forms.CheckBox();
             this.tmrUpdate = new System.Windows.Forms.Timer(this.components);
             this.grpMap = new System.Windows.Forms.GroupBox();
+            this.txtMapSubZoneId = new System.Windows.Forms.TextBox();
+            this.lblMapSubZoneId = new System.Windows.Forms.Label();
             this.btnCopyPlayerXYZ = new System.Windows.Forms.Button();
             this.btnCopyPlayerVector3 = new System.Windows.Forms.Button();
             this.chkCommonBehaviorsIsLoading = new System.Windows.Forms.CheckBox();
@@ -107,8 +109,8 @@
             this.txtTargetId = new System.Windows.Forms.TextBox();
             this.lblTargetId = new System.Windows.Forms.Label();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
-            this.txtMapSubZoneId = new System.Windows.Forms.TextBox();
-            this.lblMapSubZoneId = new System.Windows.Forms.Label();
+            this.txtMapSubZoneName = new System.Windows.Forms.TextBox();
+            this.lblMapSubZoneName = new System.Windows.Forms.Label();
             this.grpPlayer.SuspendLayout();
             this.grpMap.SuspendLayout();
             this.grpGameObjects.SuspendLayout();
@@ -142,7 +144,7 @@
             this.grpPlayer.ForeColor = System.Drawing.Color.White;
             this.grpPlayer.Location = new System.Drawing.Point(8, 32);
             this.grpPlayer.Name = "grpPlayer";
-            this.grpPlayer.Size = new System.Drawing.Size(328, 272);
+            this.grpPlayer.Size = new System.Drawing.Size(328, 296);
             this.grpPlayer.TabIndex = 0;
             this.grpPlayer.TabStop = false;
             this.grpPlayer.Text = "Player";
@@ -332,7 +334,7 @@
             // 
             // txtMapPlayerPosition
             // 
-            this.txtMapPlayerPosition.Location = new System.Drawing.Point(104, 136);
+            this.txtMapPlayerPosition.Location = new System.Drawing.Point(104, 160);
             this.txtMapPlayerPosition.Name = "txtMapPlayerPosition";
             this.txtMapPlayerPosition.Size = new System.Drawing.Size(216, 22);
             this.txtMapPlayerPosition.TabIndex = 9;
@@ -340,7 +342,7 @@
             // 
             // lblMapPlayerPosition
             // 
-            this.lblMapPlayerPosition.Location = new System.Drawing.Point(8, 139);
+            this.lblMapPlayerPosition.Location = new System.Drawing.Point(8, 163);
             this.lblMapPlayerPosition.Name = "lblMapPlayerPosition";
             this.lblMapPlayerPosition.Size = new System.Drawing.Size(96, 16);
             this.lblMapPlayerPosition.TabIndex = 6;
@@ -363,6 +365,8 @@
             // 
             // grpMap
             // 
+            this.grpMap.Controls.Add(this.txtMapSubZoneName);
+            this.grpMap.Controls.Add(this.lblMapSubZoneName);
             this.grpMap.Controls.Add(this.txtMapSubZoneId);
             this.grpMap.Controls.Add(this.lblMapSubZoneId);
             this.grpMap.Controls.Add(this.btnCopyPlayerXYZ);
@@ -383,17 +387,32 @@
             this.grpMap.ForeColor = System.Drawing.Color.White;
             this.grpMap.Location = new System.Drawing.Point(680, 32);
             this.grpMap.Name = "grpMap";
-            this.grpMap.Size = new System.Drawing.Size(328, 272);
+            this.grpMap.Size = new System.Drawing.Size(328, 296);
             this.grpMap.TabIndex = 22;
             this.grpMap.TabStop = false;
             this.grpMap.Text = "Map";
+            // 
+            // txtMapSubZoneId
+            // 
+            this.txtMapSubZoneId.Location = new System.Drawing.Point(104, 64);
+            this.txtMapSubZoneId.Name = "txtMapSubZoneId";
+            this.txtMapSubZoneId.Size = new System.Drawing.Size(216, 22);
+            this.txtMapSubZoneId.TabIndex = 38;
+            // 
+            // lblMapSubZoneId
+            // 
+            this.lblMapSubZoneId.Location = new System.Drawing.Point(8, 67);
+            this.lblMapSubZoneId.Name = "lblMapSubZoneId";
+            this.lblMapSubZoneId.Size = new System.Drawing.Size(96, 16);
+            this.lblMapSubZoneId.TabIndex = 37;
+            this.lblMapSubZoneId.Text = "SubZone ID";
             // 
             // btnCopyPlayerXYZ
             // 
             this.btnCopyPlayerXYZ.ForeColor = System.Drawing.Color.Black;
             this.btnCopyPlayerXYZ.Image = global::Beholder.Properties.Resources.clipboard;
             this.btnCopyPlayerXYZ.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnCopyPlayerXYZ.Location = new System.Drawing.Point(8, 160);
+            this.btnCopyPlayerXYZ.Location = new System.Drawing.Point(8, 184);
             this.btnCopyPlayerXYZ.Name = "btnCopyPlayerXYZ";
             this.btnCopyPlayerXYZ.Size = new System.Drawing.Size(312, 23);
             this.btnCopyPlayerXYZ.TabIndex = 36;
@@ -406,7 +425,7 @@
             this.btnCopyPlayerVector3.ForeColor = System.Drawing.Color.Black;
             this.btnCopyPlayerVector3.Image = global::Beholder.Properties.Resources.clipboard;
             this.btnCopyPlayerVector3.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnCopyPlayerVector3.Location = new System.Drawing.Point(8, 184);
+            this.btnCopyPlayerVector3.Location = new System.Drawing.Point(8, 208);
             this.btnCopyPlayerVector3.Name = "btnCopyPlayerVector3";
             this.btnCopyPlayerVector3.Size = new System.Drawing.Size(312, 23);
             this.btnCopyPlayerVector3.TabIndex = 35;
@@ -417,7 +436,7 @@
             // chkCommonBehaviorsIsLoading
             // 
             this.chkCommonBehaviorsIsLoading.AutoSize = true;
-            this.chkCommonBehaviorsIsLoading.Location = new System.Drawing.Point(8, 248);
+            this.chkCommonBehaviorsIsLoading.Location = new System.Drawing.Point(8, 272);
             this.chkCommonBehaviorsIsLoading.Name = "chkCommonBehaviorsIsLoading";
             this.chkCommonBehaviorsIsLoading.Size = new System.Drawing.Size(194, 19);
             this.chkCommonBehaviorsIsLoading.TabIndex = 28;
@@ -426,7 +445,7 @@
             // 
             // txtMapWeather
             // 
-            this.txtMapWeather.Location = new System.Drawing.Point(104, 112);
+            this.txtMapWeather.Location = new System.Drawing.Point(104, 136);
             this.txtMapWeather.Name = "txtMapWeather";
             this.txtMapWeather.Size = new System.Drawing.Size(216, 22);
             this.txtMapWeather.TabIndex = 27;
@@ -434,7 +453,7 @@
             // 
             // label1
             // 
-            this.label1.Location = new System.Drawing.Point(8, 115);
+            this.label1.Location = new System.Drawing.Point(8, 139);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(96, 16);
             this.label1.TabIndex = 26;
@@ -442,7 +461,7 @@
             // 
             // txtMapWeatherId
             // 
-            this.txtMapWeatherId.Location = new System.Drawing.Point(104, 88);
+            this.txtMapWeatherId.Location = new System.Drawing.Point(104, 112);
             this.txtMapWeatherId.Name = "txtMapWeatherId";
             this.txtMapWeatherId.Size = new System.Drawing.Size(216, 22);
             this.txtMapWeatherId.TabIndex = 25;
@@ -450,7 +469,7 @@
             // 
             // label2
             // 
-            this.label2.Location = new System.Drawing.Point(8, 91);
+            this.label2.Location = new System.Drawing.Point(8, 115);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(96, 16);
             this.label2.TabIndex = 24;
@@ -459,7 +478,7 @@
             // chkMapWorldManagerCanTeleport
             // 
             this.chkMapWorldManagerCanTeleport.AutoSize = true;
-            this.chkMapWorldManagerCanTeleport.Location = new System.Drawing.Point(8, 216);
+            this.chkMapWorldManagerCanTeleport.Location = new System.Drawing.Point(8, 240);
             this.chkMapWorldManagerCanTeleport.Name = "chkMapWorldManagerCanTeleport";
             this.chkMapWorldManagerCanTeleport.Size = new System.Drawing.Size(185, 19);
             this.chkMapWorldManagerCanTeleport.TabIndex = 23;
@@ -469,7 +488,7 @@
             // chkMapWorldManagerCanFly
             // 
             this.chkMapWorldManagerCanFly.AutoSize = true;
-            this.chkMapWorldManagerCanFly.Location = new System.Drawing.Point(8, 232);
+            this.chkMapWorldManagerCanFly.Location = new System.Drawing.Point(8, 256);
             this.chkMapWorldManagerCanFly.Name = "chkMapWorldManagerCanFly";
             this.chkMapWorldManagerCanFly.Size = new System.Drawing.Size(153, 19);
             this.chkMapWorldManagerCanFly.TabIndex = 22;
@@ -528,9 +547,9 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.grpGameObjects.Controls.Add(this.dgvGameObjects);
             this.grpGameObjects.ForeColor = System.Drawing.Color.White;
-            this.grpGameObjects.Location = new System.Drawing.Point(8, 320);
+            this.grpGameObjects.Location = new System.Drawing.Point(8, 336);
             this.grpGameObjects.Name = "grpGameObjects";
-            this.grpGameObjects.Size = new System.Drawing.Size(1256, 501);
+            this.grpGameObjects.Size = new System.Drawing.Size(1256, 485);
             this.grpGameObjects.TabIndex = 24;
             this.grpGameObjects.TabStop = false;
             this.grpGameObjects.Text = "Game Objects (Does not update automatically, close window and reopen to update)";
@@ -550,7 +569,7 @@
             this.dgvGameObjects.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.Black;
             this.dgvGameObjects.RowTemplate.DefaultCellStyle.SelectionBackColor = System.Drawing.Color.RoyalBlue;
             this.dgvGameObjects.RowTemplate.DefaultCellStyle.SelectionForeColor = System.Drawing.Color.White;
-            this.dgvGameObjects.Size = new System.Drawing.Size(1240, 469);
+            this.dgvGameObjects.Size = new System.Drawing.Size(1240, 453);
             this.dgvGameObjects.TabIndex = 25;
             this.dgvGameObjects.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.dgvGameObjects_DataError);
             // 
@@ -574,7 +593,7 @@
             this.grpUi.ForeColor = System.Drawing.Color.White;
             this.grpUi.Location = new System.Drawing.Point(1016, 32);
             this.grpUi.Name = "grpUi";
-            this.grpUi.Size = new System.Drawing.Size(248, 272);
+            this.grpUi.Size = new System.Drawing.Size(248, 296);
             this.grpUi.TabIndex = 28;
             this.grpUi.TabStop = false;
             this.grpUi.Text = "UI";
@@ -754,7 +773,7 @@
             this.groupBox1.ForeColor = System.Drawing.Color.White;
             this.groupBox1.Location = new System.Drawing.Point(344, 32);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(328, 272);
+            this.groupBox1.Size = new System.Drawing.Size(328, 296);
             this.groupBox1.TabIndex = 33;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Target";
@@ -913,20 +932,20 @@
             this.toolTip.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
             this.toolTip.ToolTipTitle = "Copied to clipboard!";
             // 
-            // txtMapSubZoneId
+            // txtMapSubZoneName
             // 
-            this.txtMapSubZoneId.Location = new System.Drawing.Point(104, 64);
-            this.txtMapSubZoneId.Name = "txtMapSubZoneId";
-            this.txtMapSubZoneId.Size = new System.Drawing.Size(216, 22);
-            this.txtMapSubZoneId.TabIndex = 38;
+            this.txtMapSubZoneName.Location = new System.Drawing.Point(104, 88);
+            this.txtMapSubZoneName.Name = "txtMapSubZoneName";
+            this.txtMapSubZoneName.Size = new System.Drawing.Size(216, 22);
+            this.txtMapSubZoneName.TabIndex = 40;
             // 
-            // lblMapSubZoneId
+            // lblMapSubZoneName
             // 
-            this.lblMapSubZoneId.Location = new System.Drawing.Point(8, 67);
-            this.lblMapSubZoneId.Name = "lblMapSubZoneId";
-            this.lblMapSubZoneId.Size = new System.Drawing.Size(96, 16);
-            this.lblMapSubZoneId.TabIndex = 37;
-            this.lblMapSubZoneId.Text = "SubZone ID";
+            this.lblMapSubZoneName.Location = new System.Drawing.Point(8, 91);
+            this.lblMapSubZoneName.Name = "lblMapSubZoneName";
+            this.lblMapSubZoneName.Size = new System.Drawing.Size(96, 16);
+            this.lblMapSubZoneName.TabIndex = 39;
+            this.lblMapSubZoneName.Text = "SubZone Name";
             // 
             // frmMain
             // 
@@ -1045,5 +1064,7 @@
         private System.Windows.Forms.CheckBox chkQuestLogManagerInCutscene;
         private System.Windows.Forms.TextBox txtMapSubZoneId;
         private System.Windows.Forms.Label lblMapSubZoneId;
+        private System.Windows.Forms.TextBox txtMapSubZoneName;
+        private System.Windows.Forms.Label lblMapSubZoneName;
     }
 }
