@@ -32,7 +32,7 @@
         {
             try
             {
-                Pulsator.Pulse(PulseFlags.ObjectManager | PulseFlags.Windows);
+                Pulsator.Pulse(PulseFlags.All);
 
                 chkCommonBehaviorsIsLoading.Checked = CommonBehaviors.IsLoading;
 
