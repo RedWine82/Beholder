@@ -399,3 +399,4 @@ FodyWeavers.xsd
 LlamaUtilities_*.dll
 
 .svn
+.idea

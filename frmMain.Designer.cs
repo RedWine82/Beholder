@@ -56,6 +56,8 @@
             this.chkTalkDialogOpen = new System.Windows.Forms.CheckBox();
             this.tmrUpdate = new System.Windows.Forms.Timer(this.components);
             this.grpMap = new System.Windows.Forms.GroupBox();
+            this.txtMapSubZoneName = new System.Windows.Forms.TextBox();
+            this.lblMapSubZoneName = new System.Windows.Forms.Label();
             this.txtMapSubZoneId = new System.Windows.Forms.TextBox();
             this.lblMapSubZoneId = new System.Windows.Forms.Label();
             this.btnCopyPlayerXYZ = new System.Windows.Forms.Button();
@@ -91,6 +93,8 @@
             this.chkShopExchangeItemIsOpen = new System.Windows.Forms.CheckBox();
             this.chkAlwaysOnTop = new System.Windows.Forms.CheckBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtTargetHeading = new System.Windows.Forms.TextBox();
+            this.lblTargetHeading = new System.Windows.Forms.Label();
             this.txtTargetDistance3d = new System.Windows.Forms.TextBox();
             this.lblTargetDistance3d = new System.Windows.Forms.Label();
             this.txtTargetDistance2dSqr = new System.Windows.Forms.TextBox();
@@ -109,8 +113,6 @@
             this.txtTargetId = new System.Windows.Forms.TextBox();
             this.lblTargetId = new System.Windows.Forms.Label();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
-            this.txtMapSubZoneName = new System.Windows.Forms.TextBox();
-            this.lblMapSubZoneName = new System.Windows.Forms.Label();
             this.grpPlayer.SuspendLayout();
             this.grpMap.SuspendLayout();
             this.grpGameObjects.SuspendLayout();
@@ -392,6 +394,21 @@
             this.grpMap.TabStop = false;
             this.grpMap.Text = "Map";
             // 
+            // txtMapSubZoneName
+            // 
+            this.txtMapSubZoneName.Location = new System.Drawing.Point(104, 88);
+            this.txtMapSubZoneName.Name = "txtMapSubZoneName";
+            this.txtMapSubZoneName.Size = new System.Drawing.Size(216, 22);
+            this.txtMapSubZoneName.TabIndex = 40;
+            // 
+            // lblMapSubZoneName
+            // 
+            this.lblMapSubZoneName.Location = new System.Drawing.Point(8, 91);
+            this.lblMapSubZoneName.Name = "lblMapSubZoneName";
+            this.lblMapSubZoneName.Size = new System.Drawing.Size(96, 16);
+            this.lblMapSubZoneName.TabIndex = 39;
+            this.lblMapSubZoneName.Text = "SubZone Name";
+            // 
             // txtMapSubZoneId
             // 
             this.txtMapSubZoneId.Location = new System.Drawing.Point(104, 64);
@@ -529,27 +546,24 @@
             // 
             // lblDisclaimer
             // 
-            this.lblDisclaimer.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblDisclaimer.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) | System.Windows.Forms.AnchorStyles.Right)));
             this.lblDisclaimer.Font = new System.Drawing.Font("Lucida Sans", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDisclaimer.ForeColor = System.Drawing.Color.Salmon;
             this.lblDisclaimer.Location = new System.Drawing.Point(224, 8);
             this.lblDisclaimer.Name = "lblDisclaimer";
-            this.lblDisclaimer.Size = new System.Drawing.Size(880, 16);
+            this.lblDisclaimer.Size = new System.Drawing.Size(886, 16);
             this.lblDisclaimer.TabIndex = 23;
             this.lblDisclaimer.Text = "This plugin is for developers only and is provided AS-IS with no support.";
             this.lblDisclaimer.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // grpGameObjects
             // 
-            this.grpGameObjects.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.grpGameObjects.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) | System.Windows.Forms.AnchorStyles.Left) | System.Windows.Forms.AnchorStyles.Right)));
             this.grpGameObjects.Controls.Add(this.dgvGameObjects);
             this.grpGameObjects.ForeColor = System.Drawing.Color.White;
             this.grpGameObjects.Location = new System.Drawing.Point(8, 336);
             this.grpGameObjects.Name = "grpGameObjects";
-            this.grpGameObjects.Size = new System.Drawing.Size(1256, 485);
+            this.grpGameObjects.Size = new System.Drawing.Size(1262, 502);
             this.grpGameObjects.TabIndex = 24;
             this.grpGameObjects.TabStop = false;
             this.grpGameObjects.Text = "Game Objects (Does not update automatically, close window and reopen to update)";
@@ -558,9 +572,7 @@
             // 
             this.dgvGameObjects.AllowUserToAddRows = false;
             this.dgvGameObjects.AllowUserToDeleteRows = false;
-            this.dgvGameObjects.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvGameObjects.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) | System.Windows.Forms.AnchorStyles.Left) | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvGameObjects.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvGameObjects.Location = new System.Drawing.Point(8, 24);
             this.dgvGameObjects.Name = "dgvGameObjects";
@@ -569,7 +581,7 @@
             this.dgvGameObjects.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.Black;
             this.dgvGameObjects.RowTemplate.DefaultCellStyle.SelectionBackColor = System.Drawing.Color.RoyalBlue;
             this.dgvGameObjects.RowTemplate.DefaultCellStyle.SelectionForeColor = System.Drawing.Color.White;
-            this.dgvGameObjects.Size = new System.Drawing.Size(1240, 453);
+            this.dgvGameObjects.Size = new System.Drawing.Size(1246, 470);
             this.dgvGameObjects.TabIndex = 25;
             this.dgvGameObjects.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.dgvGameObjects_DataError);
             // 
@@ -743,7 +755,7 @@
             this.chkAlwaysOnTop.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.chkAlwaysOnTop.AutoSize = true;
             this.chkAlwaysOnTop.ForeColor = System.Drawing.Color.White;
-            this.chkAlwaysOnTop.Location = new System.Drawing.Point(1144, 8);
+            this.chkAlwaysOnTop.Location = new System.Drawing.Point(1150, 8);
             this.chkAlwaysOnTop.Name = "chkAlwaysOnTop";
             this.chkAlwaysOnTop.Size = new System.Drawing.Size(113, 19);
             this.chkAlwaysOnTop.TabIndex = 29;
@@ -753,6 +765,8 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.txtTargetHeading);
+            this.groupBox1.Controls.Add(this.lblTargetHeading);
             this.groupBox1.Controls.Add(this.txtTargetDistance3d);
             this.groupBox1.Controls.Add(this.lblTargetDistance3d);
             this.groupBox1.Controls.Add(this.txtTargetDistance2dSqr);
@@ -777,6 +791,21 @@
             this.groupBox1.TabIndex = 33;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Target";
+            // 
+            // txtTargetHeading
+            // 
+            this.txtTargetHeading.Location = new System.Drawing.Point(104, 256);
+            this.txtTargetHeading.Name = "txtTargetHeading";
+            this.txtTargetHeading.Size = new System.Drawing.Size(216, 22);
+            this.txtTargetHeading.TabIndex = 43;
+            // 
+            // lblTargetHeading
+            // 
+            this.lblTargetHeading.Location = new System.Drawing.Point(8, 259);
+            this.lblTargetHeading.Name = "lblTargetHeading";
+            this.lblTargetHeading.Size = new System.Drawing.Size(96, 16);
+            this.lblTargetHeading.TabIndex = 42;
+            this.lblTargetHeading.Text = "Heading";
             // 
             // txtTargetDistance3d
             // 
@@ -932,27 +961,12 @@
             this.toolTip.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
             this.toolTip.ToolTipTitle = "Copied to clipboard!";
             // 
-            // txtMapSubZoneName
-            // 
-            this.txtMapSubZoneName.Location = new System.Drawing.Point(104, 88);
-            this.txtMapSubZoneName.Name = "txtMapSubZoneName";
-            this.txtMapSubZoneName.Size = new System.Drawing.Size(216, 22);
-            this.txtMapSubZoneName.TabIndex = 40;
-            // 
-            // lblMapSubZoneName
-            // 
-            this.lblMapSubZoneName.Location = new System.Drawing.Point(8, 91);
-            this.lblMapSubZoneName.Name = "lblMapSubZoneName";
-            this.lblMapSubZoneName.Size = new System.Drawing.Size(96, 16);
-            this.lblMapSubZoneName.TabIndex = 39;
-            this.lblMapSubZoneName.Text = "SubZone Name";
-            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.ClientSize = new System.Drawing.Size(1271, 829);
+            this.ClientSize = new System.Drawing.Size(1277, 846);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.chkAlwaysOnTop);
             this.Controls.Add(this.grpUi);
@@ -980,8 +994,10 @@
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
-
         }
+
+        private System.Windows.Forms.TextBox txtTargetHeading;
+        private System.Windows.Forms.Label lblTargetHeading;
 
         #endregion
 

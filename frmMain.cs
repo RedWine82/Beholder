@@ -70,6 +70,7 @@
                 txtTargetDistance2d.Text = GameObjectManager.Target == null ? "" : GameObjectManager.Target.Location.Distance2D(Core.Player.Location).ToString();
                 txtTargetDistance2dSqr.Text = GameObjectManager.Target == null ? "" : GameObjectManager.Target.Location.Distance2DSqr(Core.Player.Location).ToString();
                 txtTargetDistance3d.Text = GameObjectManager.Target == null ? "" : GameObjectManager.Target.Location.Distance3D(Core.Player.Location).ToString();
+                txtTargetHeading.Text = GameObjectManager.Target == null ? "" : GameObjectManager.Target.Heading.ToString();
 
                 btnCopyTargetVector3.Enabled = GameObjectManager.Target != null && GameObjectManager.Target.NpcId != 0;
                 btnCopyTargetNpcObject.Enabled = GameObjectManager.Target != null && GameObjectManager.Target.NpcId != 0;
